@@ -14,9 +14,17 @@
 
       <a-image src="https://raw.githubusercontent.com/Lullabot/vr.lullabot.com/gh-pages/docroot/img/greeting.png" position="0 2.6 -3" width="4"></a-image>
 
-      <a-entity>
-        <a-cylinder position="0 0.5 0" radius="4" height="1.6" side="back" open-ended="true" color="#37a9ef"></a-cylinder>
-      </a-entity>
+      <a-entity
+        geometry="primitive: cylinder;
+          radius: 4;
+          height: 1.6;
+          openEnded: true;"
+        material="src:url(https://raw.githubusercontent.com/Lullabot/vr.lullabot.com/gh-pages/docroot/img/client-logos.png);
+          repeat:10 1;
+          side:back;
+          color:#37a9ef;
+          opacity:0.5;
+          height:20"></a-entity>
       <a-sky color="#ECECEC"></a-sky>
       <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
       <a-light type="ambient" color="#fff"></a-light>
