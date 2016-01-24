@@ -5,10 +5,19 @@
   </head>
   <body>
     <a-scene>
-      <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky>
       <a-model src="https://raw.githubusercontent.com/bitgridio/models/gh-pages/lullabot/lullabot.dae" rotation="0 -20 0">
         <a-animation attribute="rotation" from="0 -30 0" to="0 330 0" dur="15000" easing="linear" repeat="inifite"></a-animation>
       </a-model>
+
+      <a-image src="https://raw.githubusercontent.com/Lullabot/vr.lullabot.com/master/docroot/img/Strategy%2C-Design%2C-Development-_-Lullabot-2016-01-24-11-02-10.png" position="0 2.6 0">
+      </a-image>
+
+      <a-entity>
+        <a-cylinder position="0 0.5 0" radius="4" height="1.6" side="back" open-ended="true" color="#ECECEC"></a-cylinder>
+      </a-entity>
+
+      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
     </a-scene>
   </body>
 </html>
