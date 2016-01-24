@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky>
+      <a-model src="https://raw.githubusercontent.com/bitgridio/models/gh-pages/lullabot/lullabot.dae" rotation="0 -20 0">
+        <a-animation attribute="rotation" from="0 -30 0" to="0 330 0" dur="15000" easing="linear" repeat="inifite"></a-animation>
+      </a-model>
+    </a-scene>
+  </body>
+</html>
