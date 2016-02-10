@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-camera position="0 1.6 0"></a-camera>
+
+      <a-model src="https://raw.githubusercontent.com/Lullabot/vr.lullabot.com/gh-pages/docroot/model/lullabot.dae" position="0 0 -2" rotation="0 -20 0">
+        <a-animation attribute="rotation" from="0 -30 0" to="0 330 0" dur="15000" easing="linear" repeat="inifite"></a-animation>
+      </a-model>
+
+      <a-image src="https://raw.githubusercontent.com/Lullabot/vr.lullabot.com/gh-pages/docroot/img/greeting.png" position="0 2.6 -3" width="4"></a-image>
+
+      <a-entity
+        geometry="primitive: cylinder;
+          radius: 4;
+          height: 1.6;
+          openEnded: true;"
+        material="src:url(https://raw.githubusercontent.com/Lullabot/vr.lullabot.com/gh-pages/docroot/img/client-logos.png);
+          repeat:10 1;
+          side:back;
+          color:#37a9ef;
+          opacity:0.5;
+          height:20"></a-entity>
+      <a-sky color="#ECECEC"></a-sky>
+      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+  </body>
+</html>
