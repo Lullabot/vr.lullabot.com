@@ -1,0 +1,26 @@
+{
+  "name": "LullabotVR",
+  "version": "1.0.0",
+  "description": "http://vr.lullabot.com/",
+  "scripts": {
+    "serve": "python -m SimpleHTTPServer 5555"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lullabot/vr.lullabot.com.git"
+  },
+  "keywords": [
+    "aframe",
+    "vr",
+    "mozvr",
+    "webvr",
+    "lullabot"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lullabot/vr.lullabot.com/issues"
+  },
+  "homepage": {
+    "url": "http://vr.lullabot.com/"
+  }
+}
