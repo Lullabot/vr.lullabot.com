@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.png">
+    <script src="https://aframe.io/releases/0.1.0/aframe.min.js"></script>
+    <!--<script src="./js/aframe-text-component.min.js"></script>
+    <script src="./js/fonts/helvetiker_regular.typeface.js"></script>-->
+  </head>
+  <body>
+    <!--<a-assets>
+      <a-mixin id="font" text="font: helvetiker_regular"></a-mixin>
+    </a-assets>-->
+    <a-scene>
+
+      <a-camera
+        position="0 1.6 0"></a-camera>
+      <a-sky
+        src="/team-photo/assets/team.jpg"
+        radius="1000"></a-sky>
+
+      <a-model
+        src="/model/lullabot-head.dae"
+        position="1 0 -2"
+        scale=".15 .15 .15">
+        <a-animation
+          attribute="rotation"
+          from="0 -30 0"
+          to="0 330 0"
+          dur="15000"
+          easing="linear"
+          repeat="inifite"></a-animation>
+      </a-model>
+
+      <!-- Too bad you can't use mouse/enter/leave in a mixin -->
+      <a-mixin
+        id="hover"
+        geometry="primitive: circle; radius: .3; segments: 32"
+        material="color: #FFFFFF; opacity: 0.1">
+      </a-mixin>
+
+      <a-entity
+        mixin="hover"
+        position="-0.10 1.5 -3">
+        <a-mouseenter scale="1.2 1.2 1.2" material="opacity: 1.0"></a-mouseenter>
+        <a-mouseleave scale="1 1 1" material="opacity: 0.1"></a-mouseleave>
+      </a-entity>
+
+      <a-entity
+        mixin="hover"
+        position="0.70 2 -3">
+        <a-mouseenter scale="1.2 1.2 1.2" material="opacity: 1.0"></a-mouseenter>
+        <a-mouseleave scale="1 1 1" material="opacity: 0.1"></a-mouseleave>
+      </a-entity>
+
+      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+  </body>
+</html>
