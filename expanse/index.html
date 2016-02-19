@@ -57,6 +57,19 @@
         width=".5"
         height=".25">
       </a-image>
+
+      <a-model
+        src="/model/lullabot-head.dae"
+        position="1 0 -2"
+        scale=".15 .15 .15">
+        <a-animation
+          attribute="rotation"
+          from="0 -30 0"
+          to="0 330 0"
+          dur="15000"
+          easing="linear"
+          repeat="inifite"></a-animation>
+      </a-model>
       <!-- <a-entity
         geometry="primitive: cylinder;
           radius: 4;
