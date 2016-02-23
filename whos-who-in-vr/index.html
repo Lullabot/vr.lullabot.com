@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.png">
+    <script src="https://aframe.io/releases/0.1.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+
+
+      <!-- Pedestals -->
+      <a-mixin
+        id="pedestal"
+        material="opacity: 0.2"></a-mixin>
+
+      <!-- left -->
+      <a-cylinder
+        mixin="pedestal"
+        position="-3.2 1 -6.7">
+        <a-mouseenter opacity="0.1"></a-mouseenter>
+        <a-mouseleave opacity="1"></a-mouseleave>
+      </a-cylinder>
+      <!-- middle -->
+      <a-cylinder
+        mixin="pedestal"
+        position="0 1 -8">
+        <a-mouseenter opacity="0.1"></a-mouseenter>
+        <a-mouseleave opacity="1"></a-mouseleave>
+      </a-cylinder>
+      <!-- right -->
+      <a-cylinder
+        mixin="pedestal"
+        position="3.2 1 -6.7">
+        <a-mouseenter opacity="0.1"></a-mouseenter>
+        <a-mouseleave opacity="1"></a-mouseleave>
+      </a-cylinder>
+
+
+      <a-image
+        src="assets/rift.jpg"
+        position="0 1 -8"></a-image>
+
+      <a-model
+        src="assets/platform.dae"
+        position="0 0 -6.7"
+        scale="1.5 2 1.8"></a-model>
+
+      <a-sky
+        color="#000"></a-sky>
+      <a-camera
+        position="0 1.6 0"></a-camera>
+      <a-light type="directional" color="#fff" intensity=".5" position="0 200 -200"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+
+    </a-scene>
+  </body>
+</html>
