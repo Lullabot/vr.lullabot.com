@@ -5,6 +5,7 @@
   <a-camera
     position="0 1.6 0"></a-camera>
   <a-sky
+    id="sky"
     src="img/0.jpg"
     rotation="0 270 0"></a-sky>
 
@@ -15,9 +16,26 @@
   </a-mixin>
 
   <a-entity
+    id="button"
     mixin="hover"
-    position="0 1.6 -3"
-    onClick="location.href='1.html'">
+    position="0 1.6 -3">
   </a-entity>
 
 </a-scene>
+
+<script type="text/javascript">
+
+document.querySelector("#button").addEventListener('click', function() {
+  // get the current number
+  var num = document.querySelector('#sky').getAttribute('src').substr(4, 1);
+
+  // set the new src
+  if (num == 4) {
+    document.querySelector('#sky').setAttribute('src', 'img/0.jpg');
+  } else {
+    num++;
+    document.querySelector('#sky').setAttribute('src', 'img/' + num +'.jpg');
+  }
+
+});
+</script>
