@@ -1,0 +1,23 @@
+
+<script src="https://aframe.io/releases/0.1.2/aframe.min.js"></script>
+<a-scene>
+
+  <a-camera
+    position="0 1.6 0"></a-camera>
+  <a-sky
+    src="img/0.jpg"
+    rotation="0 270 0"></a-sky>
+
+  <a-mixin
+    id="hover"
+    geometry="primitive: circle; radius: .3; segments: 32"
+    material="color: #FFFFFF; opacity: 0.1">
+  </a-mixin>
+
+  <a-entity
+    mixin="hover"
+    position="0 1.6 -3"
+    onClick="location.href='1.html'">
+  </a-entity>
+
+</a-scene>
