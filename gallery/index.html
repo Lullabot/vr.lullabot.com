@@ -1,0 +1,75 @@
+
+<script src="https://aframe.io/releases/0.1.2/aframe.min.js"></script>
+
+<a-scene>
+
+  <a-camera
+    position="0 1.6 0"></a-camera>
+  <a-sky
+    id="sky"
+    src="img/0.jpg"
+    rotation="0 270 0"></a-sky>
+
+  <a-sphere
+    id="zero"
+    position="-4 -2 -2"
+    src="img/0.jpg">
+    <a-animation
+      attribute="rotation"
+      to="0 360 0"
+      dur="10000"
+      fill="forwards"
+      repeat="indefinite"></a-animation></a-sphere>
+  <a-sphere
+    id="first"
+    position="-2 -2 -3"
+    src="img/1.jpg">
+    <a-animation
+      attribute="rotation"
+      to="0 360 0"
+      dur="10000"
+      fill="forwards"
+      repeat="indefinite"></a-animation></a-sphere>
+  <a-sphere
+    id="second"
+    position="0 -2 -4"
+    src="img/2.jpg">
+    <a-animation
+      attribute="rotation"
+      to="0 360 0"
+      dur="10000"
+      fill="forwards"
+      repeat="indefinite"></a-animation></a-sphere>
+  <a-sphere
+    id="third"
+    position="2 -2 -3"
+    src="img/3.jpg">
+    <a-animation
+      attribute="rotation"
+      to="0 360 0"
+      dur="10000"
+      fill="forwards"
+      repeat="indefinite"></a-animation></a-sphere>
+  <a-sphere
+    id="fourth"
+    position="4 -2 -2"
+    src="img/4.jpg">
+    <a-animation
+      attribute="rotation"
+      to="0 360 0"
+      dur="10000"
+      fill="forwards"
+      repeat="indefinite"></a-animation></a-sphere>
+
+</a-scene>
+
+<script type="text/javascript">
+
+var image = ['zero', 'first', 'second', 'third', 'fourth'];
+image.map(function(id) {
+  document.querySelector('#'+id).addEventListener('click', function() {
+    var src = document.querySelector('#'+id).getAttribute('src');
+    document.querySelector('#sky').setAttribute('src', src);
+  });
+})
+</script>
