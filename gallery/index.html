@@ -6,8 +6,24 @@
   <a-camera
     position="0 1.6 0"></a-camera>
   <a-sky
-    id="sky"
+    id="sky-zero"
     src="img/0.jpg"
+    rotation="0 270 0"></a-sky>
+  <a-sky
+    id="sky-first"
+    src="img/1.jpg"
+    rotation="0 270 0"></a-sky>
+  <a-sky
+    id="sky-second"
+    src="img/2.jpg"
+    rotation="0 270 0"></a-sky>
+  <a-sky
+    id="sky-third"
+    src="img/3.jpg"
+    rotation="0 270 0"></a-sky>
+  <a-sky
+    id="sky-fourth"
+    src="img/4.jpg"
     rotation="0 270 0"></a-sky>
 
   <a-sphere
@@ -68,8 +84,12 @@
 var image = ['zero', 'first', 'second', 'third', 'fourth'];
 image.map(function(id) {
   document.querySelector('#'+id).addEventListener('click', function() {
-    var src = document.querySelector('#'+id).getAttribute('src');
-    document.querySelector('#sky').setAttribute('src', src);
+    image.map(function(sel) {
+      if (sel !== id) {
+        document.querySelector('#sky-'+sel).setAttribute('visible', 'false');
+      }
+    })
+    document.querySelector('#sky-'+id).setAttribute('visible', 'true');
   });
 })
 </script>
