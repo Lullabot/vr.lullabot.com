@@ -9,7 +9,7 @@
 
       <a-camera position="0 1.6 0"></a-camera>
 
-      <a-light  position="-175 262 -432" intensity="0.5" color="#d6955b" type="point" decay="0"></a-light>
+      <a-light  position="-175 262 -432" intensity="0.6" color="#d6955b" type="point" decay="0"></a-light>
       <!-- <a-sphere position="-200 300 -500" radius="40" color="#85a3e7"></a-sphere> -->
 
       <!-- Moon -->
@@ -19,10 +19,11 @@
       <a-sphere position="-20 0 -0" radius="1"></a-sphere> -->
 
       <!-- Lake -->
-      <a-entity scale="60 60 60" position="40 0 -500">
+      <!--<a-entity scale="60 60 60" position="40 0 -500">
         <a-cylinder position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#1d2545" height="0.01" metalness="0.5"></a-cylinder>
         <a-cylinder position="-2 -0.5 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#1d2545" height="0.01" metalness="0.5"></a-cylinder>
       </a-entity>
+      -->
 
       <!-- Lullabot Spaceship -->
       <a-entity position="10 250 -25" rotation="0 -60 0">
@@ -80,16 +81,16 @@
       </a-entity>-->
 
       <!-- Clouds -->
-      <a-entity scale="40 1 40" position="400 200 -500" rotation="0 45 0">
-        <a-cylinder position="-3 20 -1.5" rotation="0 -90 0" radius="2" segments-radial="15" color="#687b8f" height="50"></a-cylinder>
-        <a-cylinder position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#687b8f" height="10"></a-cylinder>
-        <a-cylinder position="-2 -0.5 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#687b8f" height="10"></a-cylinder>
+      <a-entity scale="40 1 40" position="400 300 -500" rotation="0 45 0">
+        <a-cylinder metalness="0.2" position="-3 20 -1.5" rotation="0 -90 0" radius="2" segments-radial="15" color="#4f5d75" height="50"></a-cylinder>
+        <a-cylinder metalness="0.2" position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
+        <a-cylinder metalness="0.2" position="-2 -0.5 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
       </a-entity>
 
       <!-- Clouds -->
-      <a-entity scale="30 1 30" position="10 200 -100" rotation="0 90 0">
-        <a-cylinder position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#687b8f" height="10"></a-cylinder>
-        <a-cylinder position="-2 -0.5 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#687b8f" height="10"></a-cylinder>
+      <a-entity scale="20 1 20" position="10 200 -100" rotation="0 90 0">
+        <a-cylinder position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
+        <a-cylinder position="-2 -12 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
       </a-entity>
 
       <a-sky src="img/night-scene/sky-with-stars.jpg" radius="6000"></a-sky>
