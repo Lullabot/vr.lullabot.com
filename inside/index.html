@@ -1,0 +1,27 @@
+<script src="https://aframe.io/releases/0.1.2/aframe.min.js"></script>
+
+<a-scene>
+
+  <a-camera
+    position="0 0 0"></a-camera>
+
+  <a-model
+    src="lullabot-head-inside.dae"
+    position="0 -10 0"
+    scale="10 10 10"
+    material="side: double; metalness: 1"></a-model>
+
+  <a-entity
+    light="type: point; intensity: .3; distance: 10; decay: 1"
+    position="-1.5 1 0"></a-entity>
+  <a-entity
+    light="type: point; intensity: .3; distance: 10; decay: 1"
+    position="1.5 1 0"></a-entity>
+  <a-entity
+    light="type: spot; angle: 270; intensity: 1; distance 5;"
+    position="0 5 0"></a-entity>
+  <a-entity
+    light="type: spot; angle: 90; intensity: 1; distance 5;"
+    position="0 0 0"></a-entity>
+
+</a-scene>
