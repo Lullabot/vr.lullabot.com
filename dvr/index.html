@@ -4,38 +4,169 @@
 
   <a-camera
     position="0 1.6 0"></a-camera>
-  <a-sky
-    id="sky"
-    src="img/0.jpg"
-    rotation="0 270 0"></a-sky>
 
+<!-- Photos -->
+  <a-sky
+    id="intro-part-1"
+    src="img/0.png"
+    rotation="0 270 0"></a-sky>
+  <a-sky
+    id="intro-part-2"
+    src="img/1.png"
+    rotation="0 270 0"
+    visible="false"></a-sky>
+  <a-sky
+    id="team-photo"
+    src="img/2.jpg"
+    rotation="0 270 0"
+    visible="false"></a-sky>
+
+<!-- Night scene -->
+  <a-entity
+    id="night-scene"
+    visible="false">
+
+    <a-light  position="-175 262 -432" intensity="0.6" color="#d6955b" type="point" decay="0"></a-light>
+    <!-- <a-sphere position="-200 300 -500" radius="40" color="#85a3e7"></a-sphere> -->
+
+    <!-- Moon -->
+    <a-plane position="-200 300 -500" rotation="10 0 0" width="150" height="150" src="/img/night-scene/moon.png"></a-plane>
+
+    <!-- Lullabot Spaceship -->
+    <a-entity position="10 250 -25" rotation="0 -60 0">
+      <a-model src="/model/lullabot-head.dae" scale="10 10 10"></a-model>
+      <!-- Adding a long delay to this animation so user can get it into cardboard mode when lullabot ship comes down begin="15000" -->
+      <a-animation attribute="position" from="10 250 -25" to="10 -7 -25" begin="0" dur="30000" easing="ease-out"></a-animation>
+    </a-entity>
+
+    <!-- Rocket glow on ground -->
+    <a-plane position="10 0 -25" rotation="-90 0 0" width="6" height="6" color="#1a2840">
+      <!-- <a-animation attribute="opacity" from="0" to="1" dur="1000" easing="ease-out"></a-animation> -->
+    </a-plane>
+
+    <!-- Clouds -->
+    <a-entity scale="40 1 40" position="400 300 -500" rotation="0 45 0">
+      <a-cylinder metalness="0.2" position="-3 20 -1.5" rotation="0 -90 0" radius="2" segments-radial="15" color="#4f5d75" height="50"></a-cylinder>
+      <a-cylinder metalness="0.2" position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
+      <a-cylinder metalness="0.2" position="-2 -0.5 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
+    </a-entity>
+
+    <!-- Clouds -->
+    <a-entity scale="20 1 20" position="10 200 -100" rotation="0 90 0">
+      <a-cylinder position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
+      <a-cylinder position="-2 -12 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#4f5d75" height="10"></a-cylinder>
+    </a-entity>
+
+    <a-sky src="/img/night-scene/sky-with-stars.jpg" radius="6000"></a-sky>
+    <a-light type="directional" color="#555" intensity="0.2" position="-1 2 1"></a-light>
+    <a-light type="ambient" color="#fff"></a-light>
+  </a-entity>
+
+
+<!-- Buttons -->
   <a-mixin
-    id="hover"
+    id="button"
     geometry="primitive: circle; radius: .3; segments: 32"
-    material="color: #FFFFFF; opacity: 0.1">
+    material="color: #FFFFFF; opacity: 0.1"
+    visible="false">
   </a-mixin>
 
   <a-entity
-    id="button"
-    mixin="hover"
-    position="0 1.6 -3">
+    id="got-it"
+    mixin="button"
+    position="0 0.8 -2"
+    visible="false">
+  </a-entity>
+
+  <a-entity
+    id="back"
+    mixin="button"
+    position="0 -2 -3"
+    visible="false">
+  </a-entity>
+
+  <a-entity
+    id="lullabot"
+    mixin="button"
+    position="1 1.6 -3"
+    visible="false">
   </a-entity>
 
 </a-scene>
 
 <script type="text/javascript">
 
-document.querySelector("#button").addEventListener('click', function() {
-  // get the current number
-  var num = document.querySelector('#sky').getAttribute('src').substr(4, 1);
+  // Setup basic vars for shorthand referencing.
+  var seconds = 3;
+  var intro1 = document.querySelector('#intro-part-1');
+  var intro2 = document.querySelector('#intro-part-2');
+  var team = document.querySelector('#team-photo');
+  var nightScene = document.querySelector('#night-scene');
+  var lullabtn = document.querySelector('#lullabot');
+  var gotbtn = document.querySelector('#got-it');
+  var backbtn = document.querySelector('#back');
 
-  // set the new src
-  if (num == 4) {
-    document.querySelector('#sky').setAttribute('src', 'img/0.jpg');
-  } else {
-    num++;
-    document.querySelector('#sky').setAttribute('src', 'img/' + num +'.jpg');
+  // Sets the intro state.
+  // 0 - part 1 is visible
+  // 1 - part 2 is visible
+  function introState(which) {
+    if (which === 0) {
+      intro1.setAttribute('visible', 'true');
+      intro2.setAttribute('visible', 'false');
+      gotbtn.setAttribute('visible', 'false');
+      nightScene.setAttribute('visible', 'false');
+      team.setAttribute('visible', 'false');
+      backbtn.setAttribute('visible', 'false');
+      lullabtn.setAttribute('visible', 'false');
+    } else {
+      intro1.setAttribute('visible', 'false');
+      intro2.setAttribute('visible', 'true');
+      gotbtn.setAttribute('visible', 'true');
+      nightScene.setAttribute('visible', 'false');
+      team.setAttribute('visible', 'false');
+      backbtn.setAttribute('visible', 'false');
+      lullabtn.setAttribute('visible', 'false');
+    }
   }
 
-});
+  // Sets the night state.
+  // Intro states go away and everything in the night scene is instead visible.
+  function nightState() {
+    // set everything invisible
+    intro1.setAttribute('visible', 'false');
+    intro2.setAttribute('visible', 'false');
+    gotbtn.setAttribute('visible', 'false');
+    team.setAttribute('visible', 'false');
+    backbtn.setAttribute('visible', 'false');
+
+    // set the night scene to be visible
+    nightScene.setAttribute('visible', 'true');
+    lullabtn.setAttribute('visible', 'true');
+  }
+
+  function teamState() {
+    // set everything invisible
+    intro1.setAttribute('visible', 'false');
+    intro2.setAttribute('visible', 'false');
+    gotbtn.setAttribute('visible', 'false');
+    nightScene.setAttribute('visible', 'false');
+    lullabtn.setAttribute('visible', 'false');
+
+    // set team photo visible
+    team.setAttribute('visible', 'true');
+    backbtn.setAttribute('visible', 'true');
+
+  }
+
+  // Click handlers for our buttons.
+  gotbtn.addEventListener('click', nightState);
+  backbtn.addEventListener('click', nightState);
+  lullabot.addEventListener('click', teamState);
+
+  // Execution
+  introState(0);
+  window.setTimeout(function() {
+    introState(1);
+  }, seconds*1000);
+
 </script>
