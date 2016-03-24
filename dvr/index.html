@@ -5,6 +5,14 @@
 
 <a-scene>
 
+  <a-camera position="0 1.6 3"></a-camera>
+
+  <a-collada-model
+    src="model/lullabot-head-low-poly-white.dae"
+    position="0 3.7 -3.8"
+    look-at="[camera]">
+  </a-collada-model>
+
   <!-- Scene 1 -->
   <a-entity
     id="scene-intro-1">
@@ -74,6 +82,9 @@
     position="0 0.8 -2"
     visible="false">
   </a-entity>
+
+  <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+  <a-light type="ambient" color="#fff"></a-light>
 
 
 </a-scene>
