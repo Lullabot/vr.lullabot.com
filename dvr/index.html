@@ -56,8 +56,9 @@
       scale="3 3 1"></a-image>
   </a-entity>
 
+  <!-- Sky -->
   <a-sky
-    id="intro-part-1"
+    id="intro-sky"
     color="#2284c0"
     rotation="0 270 0"></a-sky>
 
@@ -67,24 +68,9 @@
     rotation="0 270 0"
     visible="false"></a-sky>
 
-
-<!-- Buttons -->
-  <a-mixin
-    id="button"
-    geometry="primitive: circle; radius: .3; segments: 32"
-    material="color: #FFFFFF; opacity: 0.1"
-    visible="false">
-  </a-mixin>
-
-  <a-entity
-    id="got-it"
-    mixin="button"
-    position="0 0.8 -2"
-    visible="false">
-  </a-entity>
-
-  <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
-  <a-light type="ambient" color="#fff"></a-light>
+  <!-- Lighting -->
+  <a-light type="directional" color="#ccc" intensity="0.2" position="-1 2 1"></a-light>
+  <a-light type="ambient" color="#ccc"></a-light>
 
 
 </a-scene>
@@ -93,24 +79,26 @@
 
   // Setup basic vars for shorthand referencing.
   var seconds = 7;
-  var intro1 = document.querySelector('#intro-part-1');
-  var intro2 = document.querySelector('#intro-part-2');
+  var scene1 = document.querySelector('#scene-intro-1');
+  var scene2 = document.querySelector('#scene-intro-2');
+  var introSky = document.querySelector('#intro-sky');
   var team = document.querySelector('#team-photo');
-  var gotbtn = document.querySelector('#got-it');
 
   // Sets the intro state.
   // 0 - part 1 is visible
   // 1 - part 2 is visible
   function introState(which) {
     if (which === 0) {
-      intro1.setAttribute('visible', 'true');
-      intro2.setAttribute('visible', 'false');
-      gotbtn.setAttribute('visible', 'false');
+      scene1.setAttribute('visible', 'true');
+      introSky.setAttribute('visible', 'true');
+
+      scene2.setAttribute('visible', 'false');
       team.setAttribute('visible', 'false');
     } else {
-      intro1.setAttribute('visible', 'false');
-      intro2.setAttribute('visible', 'true');
-      gotbtn.setAttribute('visible', 'true');
+      scene2.setAttribute('visible', 'true');
+      introSky.setAttribute('visible', 'true');
+
+      scene1.setAttribute('visible', 'false');
       team.setAttribute('visible', 'false');
     }
   }
@@ -119,19 +107,15 @@
     // set everything invisible
     intro1.setAttribute('visible', 'false');
     intro2.setAttribute('visible', 'false');
-    gotbtn.setAttribute('visible', 'false');
 
     // set team photo visible
     team.setAttribute('visible', 'true');
   }
 
-  // Click handlers for our buttons.
-  gotbtn.addEventListener('click', teamState);
-
   // Execution
   // introState(0);
-  // window.setTimeout(function() {
-  //   introState(1);
-  // }, seconds*1000);
+  window.setTimeout(function() {
+    introState(1);
+  }, seconds*1000);
 
 </script>
