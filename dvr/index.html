@@ -8,7 +8,7 @@
   <a-model
     id="bot-head"
     src="model/lullabot-head-low-poly-white.dae"
-    position="0 3 -15"
+    position="0 3 -5"
     scale="0.7 0.7 0.7"
     look-at="[camera]">
   </a-model>
@@ -20,22 +20,22 @@
     <!-- Text -->
     <a-image
       src="img/text-intro-1.png"
-      position="0 3 -15.1"
+      position="0 3 -5.1"
       scale="3 3 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headsets.png"
-      position="0 1 -15"
+      position="0 1 -5"
       scale="4.5 2.5 1"></a-image>
     <a-image
       src="img/ui-loading-bar.png"
-      position="0 -1 -14.9"
+      position="0 -1 -4.9"
       scale="2 1.5 1"></a-image>
     <a-entity
       geometry="primitive: plane; height: .3; width: .01"
       material="color: #FFE683"
-      position="0 -0.965 -14.8">
+      position="0 -0.965 -4.8">
       <a-animation
         attribute="geometry.width"
         to="2.75"
@@ -94,6 +94,7 @@
   var scene2 = document.querySelector('#scene-intro-2');
   var introSky = document.querySelector('#intro-sky');
   var team = document.querySelector('#team-photo');
+  var bothead = document.querySelector('#bot-head');
 
   // Sets the intro state.
   // 0 - part 1 is visible
@@ -111,6 +112,8 @@
 
       scene1.setAttribute('visible', 'false');
       team.setAttribute('visible', 'false');
+
+      bothead.setAttribute('position', '0 3 -15');
     }
   }
 
