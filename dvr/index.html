@@ -1,17 +1,15 @@
-
-
-<script src="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
-<script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+<script src="https://aframe.io/releases/latest/aframe.min.js"></script>
 
 <a-scene>
 
-  <a-camera position="0 1.6 3"></a-camera>
+  <a-camera
+    position="0 1.6 3"></a-camera>
 
-  <a-collada-model
+  <a-model
     src="model/lullabot-head-low-poly-white.dae"
     position="0 3.7 -5"
     look-at="[camera]">
-  </a-collada-model>
+  </a-model>
 
   <!-- Scene 1 -->
   <a-entity
@@ -21,17 +19,17 @@
     <a-image
       src="img/text-intro-1.png"
       position="0 3.7 -5.1"
-      scale="8 4 1"></a-image>
+      scale="4 2 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headsets.png"
       position="0 1 -5"
-      scale="9 5 1"></a-image>
+      scale="4.5 2.5 1"></a-image>
     <a-image
       src="img/ui-loading-bar.png"
-      position="0 -1 -5.1"
-      scale="4 3 1"></a-image>
+      position="0 -1 -4.9"
+      scale="2 1.5 1"></a-image>
   </a-entity>
 
   <!-- Scene 2 -->
@@ -43,17 +41,17 @@
     <a-image
       src="img/text-intro-2.png"
       position="0 3.7 -5.1"
-      scale="8 4 1"></a-image>
+      scale="4 2 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headset-click.png"
       position="0 1 -5"
-      scale="4.5 2.5 1"></a-image>
+      scale="2.25 1.25 1"></a-image>
     <a-image
       src="img/button-gotit.png"
       position="0 -2 -5.1"
-      scale="3 3 1"></a-image>
+      scale="1.75 1.75 1"></a-image>
   </a-entity>
 
   <!-- Sky -->
