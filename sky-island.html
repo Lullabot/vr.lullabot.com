@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    </style>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-camera position="0 1.6 0"></a-camera>
+
+      <a-light  position="0 -315 2500" intensity="0.6" color="#fffddd" type="point" decay="0"></a-light>
+      <!-- <a-sphere position="0 -315 2500" rotation="10 0 0" radius="150" color="red"></a-sphere> -->
+
+
+      <!-- Lullabot Spaceship -->
+      <a-entity position="10 250 -25" rotation="0 25 0">
+        <a-animation
+          attribute="position"
+          from="-15 250 -25"
+          to="-15 -7 -25"
+          begin="0"
+          dur="30000"
+          easing="ease-out"></a-animation>
+        <a-entity>
+          <a-model src="model/lullabot-head.dae" scale="10 10 10"></a-model>
+          <!-- Adding a long delay to this animation so user can get it into cardboard mode when lullabot ship comes down begin="15000" -->
+          <a-animation
+            attribute="position"
+            repeat="indefinite"
+            from="0 0 0"
+            to="0 1 0"
+            dur="2500"
+            direction="alternate"
+            easing="ease-in-out"></a-animation>
+        </a-entity>
+      </a-entity>
+
+      <!-- Clouds
+      <a-entity scale="20 1 20" position="10 200 -100" rotation="0 90 0">
+        <a-cylinder position="-3 -0.5 0" rotation="0 -90 0" radius="2" segments-radial="15" color="#659de3" height="10"></a-cylinder>
+        <a-cylinder position="-2 -12 -3" rotation="0 -90 0" radius="4" segments-radial="15" color="#659de3" height="10"></a-cylinder>
+      </a-entity>-->
+
+      <a-sky src="img/sky-island/sky.jpg" radius="6000"></a-sky>
+      <a-light type="directional" color="#555" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+  </body>
+</html>
