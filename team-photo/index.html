@@ -22,7 +22,7 @@
       <a-mixin
         id="hover"
         geometry="primitive: plane; width: 1; height: 1;"
-        material="color: #FFFFFF; opacity: 0">
+        material="color: #FFFFFF; opacity: 0.2">
       </a-mixin>
 
       <!-- Greg -->
@@ -57,6 +57,23 @@
         scale="0.6 0.3 0.3"
         opacity="0"
         look-at=[camera]>
+      </a-image>
+
+      <!-- Tim -->
+      <a-entity
+              mixin="hover"
+              position="-1.2 2.6 -3"
+              geometry="width: 0.7; height: 0.95;">
+        <a-mouseenter target="#tim" opacity="1.0"></a-mouseenter>
+        <a-mouseleave target="#tim" opacity="0"></a-mouseleave>
+      </a-entity>
+      <a-image
+              id="tim"
+              position="-1.2 3.5 -3"
+              src="/team-photo/assets/photo_labels/tim_m.png"
+              scale="0.6 0.3 0.3"
+              opacity="0"
+              look-at=[camera]>
       </a-image>
 
       <!-- David -->
