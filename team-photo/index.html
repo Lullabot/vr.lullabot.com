@@ -18,41 +18,60 @@
         src="/team-photo/assets/team.jpg"
         radius="1000"></a-sky>
 
-      <a-model
-        src="/model/lullabot-head.dae"
-        position="1 0 -2"
-        scale=".15 .15 .15">
-        <a-animation
-          attribute="rotation"
-          from="0 -30 0"
-          to="0 330 0"
-          dur="15000"
-          easing="linear"
-          repeat="inifite"></a-animation>
-      </a-model>
-
       <!-- Too bad you can't use mouse/enter/leave in a mixin -->
       <a-mixin
         id="hover"
-        geometry="primitive: circle; radius: .3; segments: 32"
-        material="color: #FFFFFF; opacity: 0.1">
+        geometry="primitive: plane; width: 1; height: 1;"
+        material="color: #FFFFFF; opacity: 0">
       </a-mixin>
 
       <!-- Greg -->
       <a-entity
         mixin="hover"
-        position="-0.10 1.5 -3">
-        <a-mouseenter scale="1.2 1.2 1.2" material="opacity: 1.0"></a-mouseenter>
-        <a-mouseleave scale="1 1 1" material="opacity: 0.1"></a-mouseleave>
+        position="-0.2 1.6 -3"
+        geometry="width: 0.7; height: 0.95;">
+        <a-mouseenter target="#greg" opacity="1.0"></a-mouseenter>
+        <a-mouseleave target="#greg" opacity="0"></a-mouseleave>
       </a-entity>
+      <a-image
+        id="greg"
+        position="-0.2 2.4 -3"
+        src="/team-photo/assets/photo_labels/greg_d.png"
+        scale="0.3 0.3 0.3"
+        opacity="0">
+      </a-image>
 
       <!-- Marissa -->
       <a-entity
         mixin="hover"
-        position="0.70 2 -3">
-        <a-mouseenter scale="1.2 1.2 1.2" material="opacity: 1.0"></a-mouseenter>
-        <a-mouseleave scale="1 1 1" material="opacity: 0.1"></a-mouseleave>
+        position="0.70 2.15 -3"
+        geometry="width: 0.7; height: 0.8;">
+        <a-mouseenter target="#marissa" opacity="1.0"></a-mouseenter>
+        <a-mouseleave target="#marissa" opacity="0"></a-mouseleave>
       </a-entity>
+      <a-image
+        id="marissa"
+        position=".65 2.9 -3.1"
+        src="/team-photo/assets/photo_labels/marissa_e.png"
+        scale="0.3 0.3 0.3"
+        opacity="0">
+      </a-image>
+
+      <!-- David -->
+      <a-entity
+              mixin="hover"
+              position="-1.2 1.6 -3"
+              geometry="width: 0.7; height: 0.95;">
+        <a-mouseenter target="#david" opacity="1.0"></a-mouseenter>
+        <a-mouseleave target="#david" opacity="0"></a-mouseleave>
+      </a-entity>
+      <a-image
+              id="david"
+              position="-1.2 2.5 -3"
+              src="/team-photo/assets/photo_labels/dave_b.png"
+              scale="0.3 0.3 0.3"
+              opacity="0">
+      </a-image>
 
       <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
       <a-light type="ambient" color="#fff"></a-light>
