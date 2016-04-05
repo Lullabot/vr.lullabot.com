@@ -22,13 +22,14 @@
       <a-mixin
               id="hover"
               geometry="primitive: plane; width: 1; height: 1;"
-              material="color: #FFFFFF; opacity: 0.2">
+              material="color: #FFFFFF; opacity: 0.2"
+              look-at=[camera]>
       </a-mixin>
 
       <!-- Greg -->
       <a-entity
               mixin="hover"
-              position="-0.2 1.6 -3"
+              position="-0.2 1.5 -3"
               geometry="width: 0.7; height: 0.95;">
         <a-mouseenter target="#greg" visible="true"></a-mouseenter>
         <a-mouseleave target="#greg" visible="false"></a-mouseleave>
@@ -37,6 +38,40 @@
               id="greg"
               position="-0.2 2.4 -3"
               src="/team-photo/assets/photo_labels/greg_d.png"
+              scale="0.6 0.3 0.3"
+              visible="false"
+              look-at=[camera]>
+      </a-image>
+
+      <!-- Esther -->
+      <a-entity
+              mixin="hover"
+              position="-0.4 2.35 -3"
+              geometry="width: 0.6; height: 0.6;">
+        <a-mouseenter target="#esther" visible="true"></a-mouseenter>
+        <a-mouseleave target="#esther" visible="false"></a-mouseleave>
+      </a-entity>
+      <a-image
+              id="esther"
+              position="-0.4 3.0 -3"
+              src="/team-photo/assets/photo_labels/esther_l.png"
+              scale="0.6 0.3 0.3"
+              visible="false"
+              look-at=[camera]>
+      </a-image>
+
+      <!-- KrisK -->
+      <a-entity
+              mixin="hover"
+              position="0 0.2 -3"
+              geometry="width: 0.7; height: 1;">
+        <a-mouseenter target="#krisk" visible="true"></a-mouseenter>
+        <a-mouseleave target="#krisk" visible="false"></a-mouseleave>
+      </a-entity>
+      <a-image
+              id="krisk"
+              position="0 1 -3"
+              src="/team-photo/assets/photo_labels/kris_k.png"
               scale="0.6 0.3 0.3"
               visible="false"
               look-at=[camera]>
@@ -59,6 +94,23 @@
               look-at=[camera]>
       </a-image>
 
+      <!-- Juan -->
+      <a-entity
+              mixin="hover"
+              position="1.6 1.3 -3"
+              geometry="width: 0.7; height: 0.8;">
+        <a-mouseenter target="#juan" visible="true"></a-mouseenter>
+        <a-mouseleave target="#juan" visible="false"></a-mouseleave>
+      </a-entity>
+      <a-image
+              id="juan"
+              position="1.65 2 -3.1"
+              src="/team-photo/assets/photo_labels/juan_o.png"
+              scale="0.6 0.3 0.3"
+              visible="false"
+              look-at=[camera]>
+      </a-image>
+
       <!-- Tim -->
       <a-entity
               mixin="hover"
@@ -71,6 +123,23 @@
               id="tim"
               position="-1.2 3.5 -3"
               src="/team-photo/assets/photo_labels/tim_m.png"
+              scale="0.6 0.3 0.3"
+              visible="false"
+              look-at=[camera]>
+      </a-image>
+
+      <!-- MattO -->
+      <a-entity
+              mixin="hover"
+              position="-2.7 2.9 -3"
+              geometry="width: 0.7; height: 0.95;">
+        <a-mouseenter target="#matto" visible="true"></a-mouseenter>
+        <a-mouseleave target="#matto" visible="false"></a-mouseleave>
+      </a-entity>
+      <a-image
+              id="matto"
+              position="-2.6 3.6 -3"
+              src="/team-photo/assets/photo_labels/matt_o.png"
               scale="0.6 0.3 0.3"
               visible="false"
               look-at=[camera]>
