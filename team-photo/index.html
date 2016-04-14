@@ -13,157 +13,260 @@
     <a-scene>
 
       <a-camera
-              position="0 1.6 0"></a-camera>
+        position="0 1.6 0"></a-camera>
       <a-sky
-              src="/team-photo/assets/team.jpg"
-              radius="1000"></a-sky>
+        src="/team-photo/assets/team.jpg"
+        radius="1000"></a-sky>
 
       <!-- Too bad you can't use mouse/enter/leave in a mixin -->
       <a-mixin
-              id="hover"
-              geometry="primitive: plane; width: 1; height: 1;"
-              material="color: #FFFFFF; opacity: 0.2"
-              look-at=[camera]>
+        id="hover"
+        geometry="primitive: plane; width: 1; height: 1;"
+        material="color: #FFFFFF; opacity: 0.2"
+        look-at=[camera]>
       </a-mixin>
 
       <!-- Greg -->
       <a-entity
-              mixin="hover"
-              position="-0.2 1.5 -3"
-              geometry="width: 0.7; height: 0.95;">
-        <a-mouseenter target="#greg" visible="true"></a-mouseenter>
-        <a-mouseleave target="#greg" visible="false"></a-mouseleave>
+        id="hover-greg"
+        target="#label-greg"
+        mixin="hover"
+        position="-0.2 1.5 -3"
+        geometry="width: 0.7; height: 0.95;">
       </a-entity>
       <a-image
-              id="greg"
-              position="-0.2 2.4 -3"
-              src="/team-photo/assets/photo_labels/greg_d.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-greg"
+        position="-0.2 2.4 -3"
+        src="/team-photo/assets/photo_labels/greg_d.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
       <!-- Esther -->
       <a-entity
-              mixin="hover"
-              position="-0.4 2.35 -3"
-              geometry="width: 0.6; height: 0.6;">
-        <a-mouseenter target="#esther" visible="true"></a-mouseenter>
-        <a-mouseleave target="#esther" visible="false"></a-mouseleave>
+        id="hover-esther"
+        target="#label-esther"
+        mixin="hover"
+        position="-0.4 2.35 -3"
+        geometry="width: 0.6; height: 0.6;">
       </a-entity>
       <a-image
-              id="esther"
-              position="-0.4 3.0 -3"
-              src="/team-photo/assets/photo_labels/esther_l.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-esther"
+        position="-0.4 3.0 -3"
+        src="/team-photo/assets/photo_labels/esther_l.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
       <!-- KrisK -->
       <a-entity
-              mixin="hover"
-              position="0 0.2 -3"
-              geometry="width: 0.7; height: 1;">
-        <a-mouseenter target="#krisk" visible="true"></a-mouseenter>
-        <a-mouseleave target="#krisk" visible="false"></a-mouseleave>
+        id="hover-krisk"
+        target="#label-krisk"
+        mixin="hover"
+        position="0 0.2 -3"
+        geometry="width: 0.7; height: 1;">
       </a-entity>
       <a-image
-              id="krisk"
-              position="0 1 -3"
-              src="/team-photo/assets/photo_labels/kris_k.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-krisk"
+        position="0 1 -3"
+        src="/team-photo/assets/photo_labels/kris_k.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
       <!-- Marissa -->
       <a-entity
-              mixin="hover"
-              position="0.70 2.15 -3"
-              geometry="width: 0.7; height: 0.8;">
-        <a-mouseenter target="#marissa" visible="true"></a-mouseenter>
-        <a-mouseleave target="#marissa" visible="false"></a-mouseleave>
+        id="hover-mars"
+        target="#label-mars"
+        mixin="hover"
+        position="0.70 2.15 -3"
+        geometry="width: 0.7; height: 0.8;">
       </a-entity>
       <a-image
-              id="marissa"
-              position=".65 2.9 -3.1"
-              src="/team-photo/assets/photo_labels/marissa_e.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-mars"
+        position=".65 2.9 -3.1"
+        src="/team-photo/assets/photo_labels/marissa_e.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
       <!-- Juan -->
       <a-entity
-              mixin="hover"
-              position="1.6 1.3 -3"
-              geometry="width: 0.7; height: 0.8;">
-        <a-mouseenter target="#juan" visible="true"></a-mouseenter>
-        <a-mouseleave target="#juan" visible="false"></a-mouseleave>
+        id="hover-juan"
+        target="#label-juan"
+        mixin="hover"
+        position="1.6 1.3 -3"
+        geometry="width: 0.7; height: 0.8;">
       </a-entity>
       <a-image
-              id="juan"
-              position="1.65 2 -3.1"
-              src="/team-photo/assets/photo_labels/juan_o.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-juan"
+        position="1.65 2 -3.1"
+        src="/team-photo/assets/photo_labels/juan_o.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
       <!-- Tim -->
       <a-entity
-              mixin="hover"
-              position="-1.2 2.6 -3"
-              geometry="width: 0.7; height: 0.95;">
-        <a-mouseenter target="#tim" visible="true"></a-mouseenter>
-        <a-mouseleave target="#tim" visible="false"></a-mouseleave>
+        id="hover-tim"
+        target="#label-tim"
+        mixin="hover"
+        position="-1.2 2.6 -3"
+        geometry="width: 0.7; height: 0.95;">
       </a-entity>
       <a-image
-              id="tim"
-              position="-1.2 3.5 -3"
-              src="/team-photo/assets/photo_labels/tim_m.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
-      </a-image>
-
-      <!-- MattO -->
-      <a-entity
-              mixin="hover"
-              position="-2.7 2.9 -3"
-              geometry="width: 0.7; height: 0.95;">
-        <a-mouseenter target="#matto" visible="true"></a-mouseenter>
-        <a-mouseleave target="#matto" visible="false"></a-mouseleave>
-      </a-entity>
-      <a-image
-              id="matto"
-              position="-2.6 3.6 -3"
-              src="/team-photo/assets/photo_labels/matt_o.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-tim"
+        position="-1.2 3.5 -3"
+        src="/team-photo/assets/photo_labels/tim_m.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
       <!-- David -->
       <a-entity
-              mixin="hover"
-              position="-1.2 1.6 -3"
-              geometry="width: 0.7; height: 0.95;">
-        <a-mouseenter target="#david" visible="true"></a-mouseenter>
-        <a-mouseleave target="#david" visible="false"></a-mouseleave>
+        id="hover-david"
+        target="#label-david"
+        mixin="hover"
+        position="-1.2 1.6 -3"
+        geometry="width: 0.7; height: 0.95;">
       </a-entity>
       <a-image
-              id="david"
-              position="-1.2 2.5 -3"
-              src="/team-photo/assets/photo_labels/dave_b.png"
-              scale="0.6 0.3 0.3"
-              visible="false"
-              look-at=[camera]>
+        id="label-david"
+        position="-1.2 2.5 -3"
+        src="/team-photo/assets/photo_labels/dave_b.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
       </a-image>
 
-      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
-      <a-light type="ambient" color="#fff"></a-light>
+      <!-- Start 35° rotation -->
+
+      <!-- MattO -->
+      <a-entity
+        id="hover-matto"
+        target="#label-matto"
+        mixin="hover"
+        position="-2.6 2.9 -3"
+        geometry="width: 0.7; height: 0.95;"
+        rotation="0 35 0">
+      </a-entity>
+      <a-image
+        id="label-matto"
+        position="-2.6 3.7 -3"
+        src="/team-photo/assets/photo_labels/matt_o.png"
+        scale="0.6 0.3 0.3"
+        visible="false"
+        look-at=[camera]>
+      </a-image>
+
     </a-scene>
+    <script type="text/javascript">
+      // when you mouse over nothing
+      //   all hovers are visible
+      //   all labels are invisible
+      // when you mouse over a hover
+      //   one label is visible
+      //   all other labels are invisible
+      //   all other hovers are invisible
+
+      var hoverGreg = document.querySelector('#hover-greg');
+      var hoverEsther = document.querySelector('#hover-esther');
+      var hoverKrisK = document.querySelector('#hover-krisk');
+      var hoverMars = document.querySelector('#hover-mars');
+      var hoverJuan = document.querySelector('#hover-juan');
+      var hoverTim = document.querySelector('#hover-tim');
+      var hoverMattO = document.querySelector('#hover-matto');
+      var hoverDavid = document.querySelector('#hover-david');
+
+      var labelGreg = document.querySelector('#label-greg');
+      var labelEsther = document.querySelector('#label-esther');
+      var labelKrisK = document.querySelector('#label-krisk');
+      var labelMars = document.querySelector('#label-mars');
+      var labelJuan = document.querySelector('#label-juan');
+      var labelTim = document.querySelector('#label-tim');
+      var labelMattO = document.querySelector('#label-matto');
+      var labelDavid = document.querySelector('#label-david');
+
+      var hovers = [
+        hoverGreg,
+        hoverEsther,
+        hoverKrisK,
+        hoverMars,
+        hoverJuan,
+        hoverTim,
+        hoverMattO,
+        hoverDavid
+      ];
+      var labels = [
+        labelGreg,
+        labelEsther,
+        labelKrisK,
+        labelMars,
+        labelJuan,
+        labelTim,
+        labelMattO,
+        labelDavid
+      ];
+
+      // Each hover needs an event listener.
+      hovers.forEach(function(hover) {
+        hover.addEventListener('mouseenter', function() {
+          // set state of all hovers to invisible except one
+          setState('hovers', 'invisible', hover);
+
+          // show corresponding label
+          var hoverLabel = hover.getAttribute('target');
+          console.log('hoverlabel', hoverLabel);
+          document.querySelector(hoverLabel).setAttribute('visible', true);
+        })
+
+        hover.addEventListener('mouseleave', function() {
+          // set state of all hovers to visible
+          setState('hovers', 'visible');
+
+          // set state of all labels to invisible
+          setState('labels', 'invisible');
+        })
+      });
+
+      function setState(subject, state, keep) {
+        var iterator;
+
+        // determine what we're iterating over
+        if (subject === 'hovers') {
+          iterator = hovers;
+        }
+        if (subject === 'labels') {
+          iterator = labels;
+        }
+        console.log('iterator', iterator);
+
+        // determine which state
+        if (state == 'visible') {
+          // set all hovers visible
+          iterator.forEach(function(iterate) {
+            iterate.setAttribute('visible', true);
+          })
+        }
+        if (state == 'invisible') {
+          // set all hovers invisible
+          iterator.forEach(function(iterate) {
+            iterate.setAttribute('visible', false);
+          })
+        }
+
+        // see if we have one to keep visible
+        if (keep) {
+          keep.setAttribute('visible', true);
+        }
+      }
+
+    </script>
   </body>
 </html>
