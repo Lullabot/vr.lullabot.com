@@ -3,12 +3,12 @@
 <a-scene>
 
   <a-camera
-    position="0 1.6 3"></a-camera>
+    position="0 1.6 0"></a-camera>
 
   <a-model
     id="bot-head"
     src="model/lullabot-head-low-poly-white.dae"
-    position="0 3 -5"
+    position="0 3 -8"
     scale="0.7 0.7 0.7"
     look-at="[camera]">
   </a-model>
@@ -20,22 +20,22 @@
     <!-- Text -->
     <a-image
       src="img/text-intro-1.png"
-      position="0 3 -5.1"
+      position="0 3 -8.1"
       scale="3 3 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headsets.png"
-      position="0 1 -5"
+      position="0 1 -8"
       scale="4.5 2.5 1"></a-image>
     <a-image
       src="img/ui-loading-bar.png"
-      position="0 -1 -4.9"
+      position="0 -1 -7.9"
       scale="2 1.5 1"></a-image>
     <a-entity
       geometry="primitive: plane; height: .3; width: .01"
       material="color: #FFE683"
-      position="0 -0.965 -4.8">
+      position="0 -0.965 -7.8">
       <a-animation
         attribute="geometry.width"
         to="2.75"
@@ -53,18 +53,18 @@
     <!-- Text -->
     <a-image
       src="img/text-intro-2.png"
-      position="0 3 -15.1"
+      position="0 3 -18.1"
       scale="4 4 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headset-click.png"
-      position="0 1 -15"
+      position="0 1 -18"
       scale="2.25 1.25 1"></a-image>
     <a-image
       id="button"
       src="img/button-gotit.png"
-      position="0 -2 -15.1"
+      position="0 -2 -18.1"
       scale="1.75 1.75 1"></a-image>
   </a-entity>
 
@@ -1030,6 +1030,171 @@
   var bothead = document.querySelector('#bot-head');
   var button = document.querySelector('#button');
 
+  // when you mouse over nothing
+  //   all hovers are visible
+  //   all labels are invisible
+  // when you mouse over a hover
+  //   one label is visible
+  //   all other labels are invisible
+  //   all other hovers are invisible
+  var hovers = [];
+  var labels = [];
+
+  // Add all of our hover elements and labels into an array so we can
+  // iterate over them dynamically when setting state.
+  hovers.push(document.querySelector('#hover-greg'));
+  labels.push(document.querySelector('#label-greg'));
+
+  hovers.push(document.querySelector('#hover-esther'));
+  labels.push(document.querySelector('#label-esther'));
+
+  hovers.push(document.querySelector('#hover-krisk'));
+  labels.push(document.querySelector('#label-krisk'));
+
+  hovers.push(document.querySelector('#hover-mars'));
+  labels.push(document.querySelector('#label-mars'));
+
+  hovers.push(document.querySelector('#hover-juan'));
+  labels.push(document.querySelector('#label-juan'));
+
+  hovers.push(document.querySelector('#hover-tim'));
+  labels.push(document.querySelector('#label-tim'));
+
+  hovers.push(document.querySelector('#hover-matto'));
+  labels.push(document.querySelector('#label-matto'));
+
+  hovers.push(document.querySelector('#hover-david'));
+  labels.push(document.querySelector('#label-david'));
+
+  hovers.push(document.querySelector('#hover-juampy-nr'));
+  labels.push(document.querySelector('#label-juampy-nr'));
+
+  hovers.push(document.querySelector('#hover-jeff-r'));
+  labels.push(document.querySelector('#label-jeff-r'));
+
+  hovers.push(document.querySelector('#hover-matt-k'));
+  labels.push(document.querySelector('#label-matt-k'));
+
+  hovers.push(document.querySelector('#hover-matthew-t'));
+  labels.push(document.querySelector('#label-matthew-t'));
+
+  hovers.push(document.querySelector('#hover-joe-f'));
+  labels.push(document.querySelector('#label-joe-f'));
+
+  hovers.push(document.querySelector('#hover-matt-r'));
+  labels.push(document.querySelector('#label-matt-r'));
+
+  hovers.push(document.querySelector('#hover-jared-p'));
+  labels.push(document.querySelector('#label-jared-p'));
+
+  hovers.push(document.querySelector('#hover-adrian-y'));
+  labels.push(document.querySelector('#label-adrian-y'));
+
+  hovers.push(document.querySelector('#hover-ben-c'));
+  labels.push(document.querySelector('#label-ben-c'));
+
+  hovers.push(document.querySelector('#hover-jerad-b'));
+  labels.push(document.querySelector('#label-jerad-b'));
+
+  hovers.push(document.querySelector('#hover-darren-p'));
+  labels.push(document.querySelector('#label-darren-p'));
+
+  hovers.push(document.querySelector('#hover-sally-y'));
+  labels.push(document.querySelector('#label-sally-y'));
+
+  hovers.push(document.querySelector('#hover-dave-r'));
+  labels.push(document.querySelector('#label-dave-r'));
+
+  hovers.push(document.querySelector('#hover-carwin-y'));
+  labels.push(document.querySelector('#label-carwin-y'));
+
+  hovers.push(document.querySelector('#hover-carwin-poopng'));
+  labels.push(document.querySelector('#label-carwin-poopng'));
+
+  hovers.push(document.querySelector('#hover-kris-b'));
+  labels.push(document.querySelector('#label-kris-b'));
+
+  hovers.push(document.querySelector('#hover-karen-s'));
+  labels.push(document.querySelector('#label-karen-s'));
+
+  hovers.push(document.querySelector('#hover-john-h'));
+  labels.push(document.querySelector('#label-john-h'));
+
+  hovers.push(document.querySelector('#hover-danny-j'));
+  labels.push(document.querySelector('#label-danny-j'));
+
+  hovers.push(document.querySelector('#hover-jeff-e'));
+  labels.push(document.querySelector('#label-jeff-e'));
+
+  hovers.push(document.querySelector('#hover-thomas-l'));
+  labels.push(document.querySelector('#label-thomas-l'));
+
+  hovers.push(document.querySelector('#hover-helena-z'));
+  labels.push(document.querySelector('#label-helena-z'));
+
+  hovers.push(document.querySelector('#hover-seth-b'));
+  labels.push(document.querySelector('#label-seth-b'));
+
+  hovers.push(document.querySelector('#hover-jessica-m'));
+  labels.push(document.querySelector('#label-jessica-m'));
+
+  hovers.push(document.querySelector('#hover-betty-t'));
+  labels.push(document.querySelector('#label-betty-t'));
+
+  hovers.push(document.querySelector('#hover-sean-l'));
+  labels.push(document.querySelector('#label-sean-l'));
+
+  hovers.push(document.querySelector('#hover-jen-w'));
+  labels.push(document.querySelector('#label-jen-w'));
+
+  hovers.push(document.querySelector('#hover-haley-s'));
+  labels.push(document.querySelector('#label-haley-s'));
+
+  hovers.push(document.querySelector('#hover-chris-a'));
+  labels.push(document.querySelector('#label-chris-a'));
+
+  hovers.push(document.querySelector('#hover-jesse-m'));
+  labels.push(document.querySelector('#label-jesse-m'));
+
+  hovers.push(document.querySelector('#hover-mateu-ab'));
+  labels.push(document.querySelector('#label-mateu-ab'));
+
+  hovers.push(document.querySelector('#hover-maggie-g'));
+  labels.push(document.querySelector('#label-maggie-g'));
+
+  hovers.push(document.querySelector('#hover-james-s'));
+  labels.push(document.querySelector('#label-james-s'));
+
+  hovers.push(document.querySelector('#hover-nate-h'));
+  labels.push(document.querySelector('#label-nate-h'));
+
+  hovers.push(document.querySelector('#hover-andrew-b'));
+  labels.push(document.querySelector('#label-andrew-b'));
+
+  hovers.push(document.querySelector('#hover-mike-h'));
+  labels.push(document.querySelector('#label-mike-h'));
+
+  hovers.push(document.querySelector('#hover-angus-m'));
+  labels.push(document.querySelector('#label-angus-m'));
+
+  hovers.push(document.querySelector('#hover-brian-s'));
+  labels.push(document.querySelector('#label-brian-s'));
+
+  hovers.push(document.querySelector('#hover-helen-p'));
+  labels.push(document.querySelector('#label-helen-p'));
+
+  hovers.push(document.querySelector('#hover-marc-d'));
+  labels.push(document.querySelector('#label-marc-d'));
+
+  hovers.push(document.querySelector('#hover-matt-w'));
+  labels.push(document.querySelector('#label-matt-w'));
+
+  hovers.push(document.querySelector('#hover-wes-r'));
+  labels.push(document.querySelector('#label-wes-r'));
+
+  hovers.push(document.querySelector('#hover-roflcaba'));
+  labels.push(document.querySelector('#label-roflcaba'));
+
   // Sets the intro state.
   // 0 - part 1 is visible
   // 1 - part 2 is visible
@@ -1051,6 +1216,7 @@
     }
   }
 
+  // Sets the team photo scene state.
   function teamState() {
     // set everything invisible
     scene1.setAttribute('visible', 'false');
@@ -1058,19 +1224,78 @@
     introSky.setAttribute('visible', 'false');
     bothead.setAttribute('visible', 'false');
 
-
-    // set team photo visible
+    // set team photo scene visible
     sceneTeam.setAttribute('visible', 'true');
   }
 
-  // Execution
-  // introState(0);
-  window.setTimeout(function() {
-    introState(1);
-  }, seconds*1000);
+  // Sets state for the team photo scene's labels and hovers.
+  function setState(subject, state, keep) {
+    var iterator;
+
+    // determine what we're iterating over
+    if (subject === 'hovers') {
+      iterator = hovers;
+    }
+    if (subject === 'labels') {
+      iterator = labels;
+    }
+    // console.log('iterator', iterator);
+
+    // determine which state
+    if (state == 'visible') {
+      // set all hovers visible
+      iterator.forEach(function(iterate) {
+        iterate.setAttribute('visible', true);
+      })
+    }
+    if (state == 'invisible') {
+      // set all hovers invisible
+      iterator.forEach(function(iterate) {
+        iterate.setAttribute('visible', false);
+      })
+    }
+
+    // see if we have one to keep visible
+    if (keep) {
+      keep.setAttribute('visible', true);
+    }
+  }
+
+  //________________
+  // Event listeners
 
   button.addEventListener('click', function() {
     teamState();
   });
+
+  // Each hover needs an event listener.
+  hovers.forEach(function(hover) {
+    hover.addEventListener('mouseenter', function() {
+      // set state of all hovers to invisible except one
+      setState('hovers', 'invisible', hover);
+
+      // show corresponding label
+      var hoverLabel = hover.getAttribute('target');
+      // console.log('hoverlabel', hoverLabel);
+      document.querySelector(hoverLabel).setAttribute('visible', true);
+    })
+
+    hover.addEventListener('mouseleave', function() {
+      // set state of all hovers to visible
+      setState('hovers', 'visible');
+
+      // set state of all labels to invisible
+      setState('labels', 'invisible');
+    })
+  });
+
+
+  //__________
+  // Execution
+
+  // introState(0);
+  window.setTimeout(function() {
+    introState(1);
+  }, seconds*1000);
 
 </script>
