@@ -3,39 +3,39 @@
 <a-scene>
 
   <a-camera
-    position="0 1.6 3"></a-camera>
+    position="0 1.6 0"></a-camera>
 
   <a-model
     id="bot-head"
     src="model/lullabot-head-low-poly-white.dae"
-    position="0 3 -5"
+    position="0 3 -8"
     scale="0.7 0.7 0.7"
     look-at="[camera]">
   </a-model>
 
-  <!-- Scene 1 -->
+  <!-- Scene 1: Intro screen 1 -->
   <a-entity
     id="scene-intro-1">
 
     <!-- Text -->
     <a-image
       src="img/text-intro-1.png"
-      position="0 3 -5.1"
+      position="0 3 -8.1"
       scale="3 3 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headsets.png"
-      position="0 1 -5"
+      position="0 1 -8"
       scale="4.5 2.5 1"></a-image>
     <a-image
       src="img/ui-loading-bar.png"
-      position="0 -1 -4.9"
+      position="0 -1 -7.9"
       scale="2 1.5 1"></a-image>
     <a-entity
       geometry="primitive: plane; height: .3; width: .01"
       material="color: #FFE683"
-      position="0 -0.965 -4.8">
+      position="0 -0.965 -7.8">
       <a-animation
         attribute="geometry.width"
         to="2.75"
@@ -45,7 +45,7 @@
     </a-entity>
   </a-entity>
 
-  <!-- Scene 2 -->
+  <!-- Scene 2: Intro screen 2 -->
   <a-entity
     id="scene-intro-2"
     visible="false">
@@ -53,18 +53,957 @@
     <!-- Text -->
     <a-image
       src="img/text-intro-2.png"
-      position="0 3 -15.1"
+      position="0 3 -18.1"
       scale="4 4 1"></a-image>
 
     <!-- Icons -->
     <a-image
       src="img/icons-headset-click.png"
-      position="0 1 -15"
+      position="0 1 -18"
       scale="2.25 1.25 1"></a-image>
     <a-image
+      id="button"
       src="img/button-gotit.png"
-      position="0 -2 -15.1"
+      position="0 -2 -18.1"
       scale="1.75 1.75 1"></a-image>
+  </a-entity>
+
+  <!-- Scene 3: Team Photo -->
+  <a-entity
+    id="scene-team-photo"
+    visible="false">
+
+    <a-sky
+      id="team-photo"
+      src="/team-photo/assets/team.jpg"></a-sky>
+
+    <a-mixin
+      id="hover"
+      geometry="primitive: plane; width: 1; height: 1;"
+      material="color: #FFFFFF; opacity: 0"></a-mixin>
+
+    <!-- Greg -->
+    <a-entity
+      id="hover-greg"
+      target="#label-greg"
+      mixin="hover"
+      position="-0.15 1.5 -3"
+      rotation="0 0 0"
+      geometry="width: 0.7; height: 0.95;">
+    </a-entity>
+    <a-image
+      id="label-greg"
+      src="/team-photo/assets/photo_labels/greg_d.png"
+      position="-0.2 2.4 -3.5"
+      rotation="0 0 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- KrisK -->
+    <a-entity
+      id="hover-krisk"
+      target="#label-krisk"
+      mixin="hover"
+      position="0.07 -0.1 -3"
+      rotation="0 -1 0"
+      geometry="width: .8; height: 1.3;">
+    </a-entity>
+    <a-image
+      id="label-krisk"
+      src="/team-photo/assets/photo_labels/kris_k.png"
+      position="0.1 0.85 -3.5"
+      rotation="0 -1 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- Marissa -->
+    <a-entity
+      id="hover-mars"
+      target="#label-mars"
+      mixin="hover"
+      position="0.70 2.1 -3"
+      rotation="0 -6 0"
+      geometry="width: 0.7; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-mars"
+      src="/team-photo/assets/photo_labels/marissa_e.png"
+      position=".7 2.8 -3.1"
+      rotation="0 -6 0"
+      scale="0.6 0.3 0"
+      visible="false">
+    </a-image>
+
+    <!-- Juampy NR -->
+    <a-entity
+      id="hover-juampy-nr"
+      target="#label-juampy-nr"
+      mixin="hover"
+      position="1.8 0 -2.6"
+      rotation="-25 -25 0"
+      geometry="width: 0.8; height: 1.1;">
+    </a-entity>
+    <a-image
+      id="label-juampy-nr"
+      src="/team-photo/assets/photo_labels/juampy_nr.png"
+      position="2 0.9 -3"
+      rotation="-25 -25 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- Juan OO -->
+    <a-entity
+      id="hover-juan"
+      target="#label-juan"
+      mixin="hover"
+      position="1.6 1.3 -3"
+      rotation="0 -25 0"
+      geometry="width: 0.7; height: 0.8;">
+    </a-entity>
+    <a-image
+      id="label-juan"
+      src="/team-photo/assets/photo_labels/juan_o.png"
+      position="1.65 2.1 -3.1"
+      rotation="0 -25 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- Jeff R -->
+    <a-entity
+      id="hover-jeff-r"
+      target="#label-jeff-r"
+      mixin="hover"
+      position="1.8 2.28 -2.3"
+      rotation="15 -38 0"
+      geometry="width: 0.7; height: 0.65;">
+    </a-entity>
+    <a-image
+      id="label-jeff-r"
+      src="/team-photo/assets/photo_labels/jeff_r.png"
+      position="1.8 2.9 -2.25"
+      rotation="15 -38 0"
+      scale="0.5 0.25 0"
+      visible="false">
+    </a-image>
+
+    <!-- Matt K -->
+    <a-entity
+      id="hover-matt-k"
+      target="#label-matt-k"
+      mixin="hover"
+      position="2.3 1.55 -1.5"
+      rotation="0 -57 0"
+      geometry="width: 0.6; height: 0.75;">
+    </a-entity>
+    <a-image
+      id="label-matt-k"
+      src="/team-photo/assets/photo_labels/matt_k.png"
+      position="2.8 2.35 -1.9"
+      rotation="0 -57 0"
+      scale="0.6 0.3 0"
+      visible="false">
+    </a-image>
+
+    <!-- Matthew T -->
+    <a-entity
+      id="hover-matthew-t"
+      target="#label-matthew-t"
+      mixin="hover"
+      position="2.4 2.45 -1.4"
+      rotation="17 -61 0"
+      geometry="width: 0.5; height: 0.6;">
+    </a-entity>
+    <a-image
+      id="label-matthew-t"
+      src="/team-photo/assets/photo_labels/matthew_t_speak.png"
+      position="2.4 3.25 -1.4"
+      rotation="17 -61 0"
+      scale="1 0.5 0"
+      visible="false">
+    </a-image>
+
+    <!-- Joe F -->
+    <a-entity
+      id="hover-joe-f"
+      target="#label-joe-f"
+      mixin="hover"
+      position="2.1 0.65 -0.9"
+      rotation="-22 -67 0"
+      geometry="width: 0.6; height: 0.8;">
+    </a-entity>
+    <a-image
+      id="label-joe-f"
+      src="/team-photo/assets/photo_labels/joe_f.png"
+      position="2.8 1.16 -1.2"
+      rotation="-22 -67 0"
+      scale="0.5 0.25 0"
+      visible="false">
+    </a-image>
+
+    <!-- Matt R -->
+    <a-entity
+      id="hover-matt-r"
+      target="#label-matt-r"
+      mixin="hover"
+      position="2.8 2.55 -0.95"
+      rotation="20 -71 0"
+      geometry="width: 0.5; height: 0.6;">
+    </a-entity>
+    <a-image
+      id="label-matt-r"
+      src="/team-photo/assets/photo_labels/matt_r.png"
+      position="2.8 3.2 -0.95"
+      rotation="20 -71 0"
+      scale="0.5 0.25 0"
+      visible="false">
+    </a-image>
+
+    <!-- Jared P -->
+    <a-entity
+      id="hover-jared-p"
+      target="#label-jared-p"
+      mixin="hover"
+      position="3 1.6 -0.35"
+      rotation="0 -84 0"
+      geometry="width: 0.6; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-jared-p"
+      src="/team-photo/assets/photo_labels/jared_p.png"
+      position="3.5 2.3 -0.425"
+      rotation="0 -84 0"
+      scale="0.6 0.3 0"
+      visible="false">
+    </a-image>
+
+    <!-- Adrian Y -->
+    <a-entity
+      id="hover-adrian-y"
+      target="#label-adrian-y"
+      mixin="hover"
+      position="3 2.4 -0.15"
+      rotation="14 -88 0"
+      geometry="width: 0.5; height: 0.6;">
+    </a-entity>
+    <a-image
+      id="label-adrian-y"
+      src="/team-photo/assets/photo_labels/adrian_y.png"
+      position="3 2.95 -0.15"
+      rotation="14 -88 0"
+      scale="0.5 0.25 0"
+      visible="false">
+    </a-image>
+
+    <!-- Ben C -->
+    <a-entity
+      id="hover-ben-c"
+      target="#label-ben-c"
+      mixin="hover"
+      position="2.8 2.4 0.55"
+      rotation="16 -101 0"
+      geometry="width: 0.6; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-ben-c"
+      src="/team-photo/assets/photo_labels/ben_c.png"
+      position="2.8 3.05 0.55"
+      rotation="16 -101 0"
+      scale="0.5 0.25 0"
+      visible="false">
+    </a-image>
+
+    <!-- Jerad B -->
+    <a-entity
+      id="hover-jerad-b"
+      target="#label-jerad-b"
+      mixin="hover"
+      position="2.7 1.5 0.6"
+      rotation="-2 -103 0"
+      geometry="width: 0.6; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-jerad-b"
+      src="/team-photo/assets/photo_labels/jerad_b.png"
+      position="3.1 2.25 .7"
+      rotation="-2 -103 0"
+      scale="0.5 0.25 0"
+      visible="false">
+    </a-image>
+
+    <!-- Darren P -->
+    <a-entity
+      id="hover-darren-p"
+      target="#label-darren-p"
+      mixin="hover"
+      position="2.2 0.6 1"
+      rotation="-23 -113 0"
+      geometry="width: 0.5; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-darren-p"
+      src="/team-photo/assets/photo_labels/darren_p.png"
+      position="2.8 1.1 1.2"
+      rotation="-23 -113 0"
+      scale="0.58 0.29 0"
+      visible="false">
+    </a-image>
+
+    <!-- Sally Y -->
+    <a-entity
+      id="hover-sally-y"
+      target="#label-sally-y"
+      mixin="hover"
+      position="2 1.8 1.45"
+      rotation="4 -127 0"
+      geometry="width: 0.5; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-sally-y"
+      src="/team-photo/assets/photo_labels/sally_y.png"
+      position="2.5 2.6 1.8"
+      rotation="4 -127 0"
+      scale="0.58 0.29 0"
+      visible="false">
+    </a-image>
+
+    <!-- Dave R -->
+    <a-entity
+      id="hover-dave-r"
+      target="#label-dave-r"
+      mixin="hover"
+      position="1.9 1.2 1.8"
+      rotation="-8 -134 0"
+      geometry="width: 0.5; height: 0.55;">
+    </a-entity>
+    <a-image
+      id="label-dave-r"
+      src="/team-photo/assets/photo_labels/dave_r_speak.png"
+      position="2.4 2.05 2.3"
+      rotation="-8 -134 2"
+      scale="1.2 0.6 0"
+      visible="false">
+    </a-image>
+
+    <!-- Carwin Y -->
+    <a-entity
+      id="hover-carwin-y"
+      target="#label-carwin-y"
+      mixin="hover"
+      position="1.8 2.05 2"
+      rotation="12 -140 0"
+      geometry="width: 0.5; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-carwin-y"
+      src="/team-photo/assets/photo_labels/carwin_y.png"
+      position="2.2 3.05 2.5"
+      rotation="12 -140 0"
+      scale="0.6 0.3 0"
+      visible="false">
+    </a-image>
+
+    <!-- Carwin Poo.png -->
+    <a-entity
+      id="hover-carwin-poopng"
+      target="#label-carwin-poopng"
+      mixin="hover"
+      position="11.5 7 15"
+      rotation="12 -140 0"
+      geometry="width: 1; height: 0.75;">
+    </a-entity>
+    <a-image
+      id="label-carwin-poopng"
+      src="/team-photo/assets/photo_labels/poo.png"
+      position="15.5 10.2 15"
+      rotation="-5 -140 20"
+      scale="3 3 0"
+      visible="false">
+    </a-image>
+
+    <!-- Kris B -->
+    <a-entity
+      id="hover-kris-b"
+      target="#label-kris-b"
+      mixin="hover"
+      position="1.65 2.45 2.6"
+      rotation="17 -148 0"
+      geometry="width: 0.45; height: 0.6;">
+    </a-entity>
+    <a-image
+      id="label-kris-b"
+      src="/team-photo/assets/photo_labels/kris_b.png"
+      position="1.8 3.2 2.8"
+      rotation="17 -148 0"
+      scale="0.6 0.3 0"
+      visible="false">
+    </a-image>
+
+    <!-- Karen S -->
+    <a-entity
+      id="hover-karen-s"
+      target="#label-karen-s"
+      mixin="hover"
+      position="1.5 -0.2 3"
+      rotation="-28 -153 0"
+      geometry="width: 0.7; height: 0.9;">
+    </a-entity>
+    <a-image
+      id="label-karen-s"
+      src="/team-photo/assets/photo_labels/karen_s_speak.png"
+      position="1.6 0.8 3.2"
+      rotation="-28 -153 0"
+      scale="1.2 0.6 0"
+      visible="false">
+    </a-image>
+
+    <!-- john h -->
+    <a-entity
+      id="hover-john-h"
+      target="#label-john-h"
+      mixin="hover"
+      position="1.45 1.5 3.1"
+      rotation="-1 -155 0"
+      geometry="width: 0.5; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-john-h"
+      src="/team-photo/assets/photo_labels/john_h.png"
+      position="1.7 2.3 3.5"
+      rotation="-1 -155 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- danny j -->
+    <a-entity
+      id="hover-danny-j"
+      target="#label-danny-j"
+      mixin="hover"
+      position="1.35 2.7 3.3"
+      rotation="18 -158 0"
+      geometry="width: 0.5; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-danny-j"
+      src="/team-photo/assets/photo_labels/danny_j.png"
+      position="1.6 3.7 3.8"
+      rotation="18 -158 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- jeff e -->
+    <a-entity
+      id="hover-jeff-e"
+      target="#label-jeff-e"
+      mixin="hover"
+      position="0.8 2.4 3.4"
+      rotation="18 -158 0"
+      geometry="width: 0.65; height: 0.8;">
+    </a-entity>
+    <a-image
+      id="label-jeff-e"
+      src="/team-photo/assets/photo_labels/jeff_e_speak.png"
+      position="0.9 4 4"
+      rotation="17 -162 3"
+      scale="1.6 0.8 0"
+      visible="false">
+    </a-image>
+
+    <!-- thomas l -->
+    <a-entity
+      id="hover-thomas-l"
+      target="#label-thomas-l"
+      mixin="hover"
+      position="0.45 0.9 3.6"
+      rotation="-9 -173 0"
+      geometry="width: 0.6; height: 0.8;">
+    </a-entity>
+    <a-image
+      id="label-thomas-l"
+      src="/team-photo/assets/photo_labels/thomas_l.png"
+      position="0.5 1.85 4.2"
+      rotation="-9 -173 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- helena z -->
+    <a-entity
+      id="hover-helena-z"
+      target="#label-helena-z"
+      mixin="hover"
+      position="0.2 -1 3.8"
+      rotation="-35 -177 0"
+      geometry="width: 0.8; height: 1.3;">
+    </a-entity>
+    <a-image
+      id="label-helena-z"
+      src="/team-photo/assets/photo_labels/helena_z_speak.png"
+      position="0.25 0.4 4.4"
+      rotation="-35 -177 0"
+      scale="1.7 0.85 0"
+      visible="false">
+    </a-image>
+
+    <!-- seth b -->
+    <a-entity
+      id="hover-seth-b"
+      target="#label-seth-b"
+      mixin="hover"
+      position="0.1 2.65 3.7"
+      rotation="16 -177 0"
+      geometry="width: 0.7; height: 1;">
+    </a-entity>
+    <a-image
+      id="label-seth-b"
+      src="/team-photo/assets/photo_labels/seth_b.png"
+      position="0.15 3.8 4.2"
+      rotation="16 -177 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!--
+      -- 180 deg point ---------------------------------
+    -->
+
+    <!-- jessica m -->
+    <a-entity
+      id="hover-jessica-m"
+      target="#label-jessica-m"
+      mixin="hover"
+      position="-0.7 2 3.2"
+      rotation="8 168 0"
+      geometry="width: 0.5; height: 0.8;">
+    </a-entity>
+    <a-image
+      id="label-jessica-m"
+      src="/team-photo/assets/photo_labels/jessica_m.png"
+      position="-0.9 3.15 4.4"
+      rotation="8 168 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- betty t -->
+    <a-entity
+      id="hover-betty-t"
+      target="#label-betty-t"
+      mixin="hover"
+      position="-1.1 1.1 2.9"
+      rotation="-7 160 0"
+      geometry="width: 0.65; height: 0.65;">
+    </a-entity>
+    <a-image
+      id="label-betty-t"
+      src="/team-photo/assets/photo_labels/betty_t.png"
+      position="-1.4 1.95 4"
+      rotation="-7 160 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- sean l -->
+    <a-entity
+      id="hover-sean-l"
+      target="#label-sean-l"
+      mixin="hover"
+      position="-1.15 2.4 2.9"
+      rotation="-7 160 0"
+      geometry="width: 0.45; height: 0.65;">
+    </a-entity>
+    <a-image
+      id="label-sean-l"
+      src="/team-photo/assets/photo_labels/sean_l.png"
+      position="-1.6 3.6 4"
+      rotation="9 160 0"
+      scale="0.9 0.45 0"
+      visible="false">
+    </a-image>
+
+    <!-- jen w -->
+    <a-entity
+      id="hover-jen-w"
+      target="#label-jen-w"
+      mixin="hover"
+      position="-1.3 0.2 2.3"
+      rotation="-28 150 0"
+      geometry="width: 0.45; height: 0.65;">
+    </a-entity>
+    <a-image
+      id="label-jen-w"
+      src="/team-photo/assets/photo_labels/jen_w.png"
+      position="-1.9 0.6 3.3"
+      rotation="-28 150 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- haley s -->
+    <a-entity
+      id="hover-haley-s"
+      target="#label-haley-s"
+      mixin="hover"
+      position="-1.275 1.9 2"
+      rotation="7 147 0"
+      geometry="width: 0.38; height: 0.4;">
+    </a-entity>
+    <a-image
+      id="label-haley-s"
+      src="/team-photo/assets/photo_labels/haley_s.png"
+      position="-1.875 2.7 3"
+      rotation="7 147 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- chris a -->
+    <a-entity
+      id="hover-chris-a"
+      target="#label-chris-a"
+      mixin="hover"
+      position="-1.4 2.05 1.45"
+      rotation="16 136 0"
+      geometry="width: 0.25; height: 0.4;">
+    </a-entity>
+    <a-image
+      id="label-chris-a"
+      src="/team-photo/assets/photo_labels/chris_a.png"
+      position="-2.65 3.4 2.8"
+      rotation="16 136 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- jesse m -->
+    <a-entity
+      id="hover-jesse-m"
+      target="#label-jesse-m"
+      mixin="hover"
+      position="-1.4 1.6 1.35"
+      rotation="0 134 0"
+      geometry="width: 0.3; height: 0.4;">
+    </a-entity>
+    <a-image
+      id="label-jesse-m"
+      src="/team-photo/assets/photo_labels/jesse_m.png"
+      position="-2.65 2.3 2.6"
+      rotation="0 134 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- mateu ab -->
+    <a-entity
+      id="hover-mateu-ab"
+      target="#label-mateu-ab"
+      mixin="hover"
+      position="-1.65 0.9 1.4"
+      rotation="-18 131 0"
+      geometry="width: 0.35; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-mateu-ab"
+      src="/team-photo/assets/photo_labels/mateu_ab.png"
+      position="-2.8 1.3 2.4"
+      rotation="-18 131 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- maggie g -->
+    <a-entity
+      id="hover-maggie-g"
+      target="#label-maggie-g"
+      mixin="hover"
+      position="-1.6 1.95 1.2"
+      rotation="11 128 0"
+      geometry="width: 0.3; height: 0.4;">
+    </a-entity>
+    <a-image
+      id="label-maggie-g"
+      src="/team-photo/assets/photo_labels/maggie_g.png"
+      position="-3 3.1 2.3"
+      rotation="11 128 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- james s -->
+    <a-entity
+      id="hover-james-s"
+      target="#label-james-s"
+      mixin="hover"
+      position="-1.9 0.3 1.2"
+      rotation="-30 123 0"
+      geometry="width: 0.5; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-james-s"
+      src="/team-photo/assets/photo_labels/james_s.png"
+      position="-3.1 0.7 2"
+      rotation="-30 123 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- nate h -->
+    <a-entity
+      id="hover-nate-h"
+      target="#label-nate-h"
+      mixin="hover"
+      position="-2.2 1.95 1"
+      rotation="8 115 0"
+      geometry="width: 0.4; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-nate-h"
+      src="/team-photo/assets/photo_labels/nate_h.png"
+      position="-4 3.3 1.8"
+      rotation="8 115 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- andrew b -->
+    <a-entity
+      id="hover-andrew-b"
+      target="#label-andrew-b"
+      mixin="hover"
+      position="-2.5 2.1 0.5"
+      rotation="14 100 0"
+      geometry="width: 0.5; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-andrew-b"
+      src="/team-photo/assets/photo_labels/andrew_b.png"
+      position="-4.1 3.55 0.8"
+      rotation="14 100 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- mike h -->
+    <a-entity
+      id="hover-mike-h"
+      target="#label-mike-h"
+      mixin="hover"
+      position="-2.5 1.5 0.1"
+      rotation="0 93 0"
+      geometry="width: 0.5; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-mike-h"
+      src="/team-photo/assets/photo_labels/mike_h.png"
+      position="-4.5 2.6 0.25"
+      rotation="0 93 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- angus m -->
+    <a-entity
+      id="hover-angus-m"
+      target="#label-angus-m"
+      mixin="hover"
+      position="-2.8 0.2 0"
+      rotation="-26 90 0"
+      geometry="width: 0.6; height: 0.9;">
+    </a-entity>
+    <a-image
+      id="label-angus-m"
+      src="/team-photo/assets/photo_labels/angus_m.png"
+      position="-4 0.8 0"
+      rotation="-26 90 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- brian s -->
+    <a-entity
+      id="hover-brian-s"
+      target="#label-brian-s"
+      mixin="hover"
+      position="-2.1 2 -0.5"
+      rotation="10 75 0"
+      geometry="width: 0.4; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-brian-s"
+      src="/team-photo/assets/photo_labels/brian_s.png"
+      position="-3.8 3.3 -0.9"
+      rotation="10 75 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- helen p -->
+    <a-entity
+      id="hover-helen-p"
+      target="#label-helen-p"
+      mixin="hover"
+      position="-2.1 1 -0.8"
+      rotation="-12 70 0"
+      geometry="width: 0.4; height: 0.45;">
+    </a-entity>
+    <a-image
+      id="label-helen-p"
+      src="/team-photo/assets/photo_labels/helen_p.png"
+      position="-3.8 1.6 -1.4"
+      rotation="-12 70 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- marc d -->
+    <a-entity
+      id="hover-marc-d"
+      target="#label-marc-d"
+      mixin="hover"
+      position="-1.5 2 -0.96"
+      rotation="13 57 0"
+      geometry="width: 0.3; height: 0.4;">
+    </a-entity>
+    <a-image
+      id="label-marc-d"
+      src="/team-photo/assets/photo_labels/marc_d_speaks.png"
+      position="-3 3.6 -1.95"
+      rotation="13 57 0"
+      scale="1.4 0.7 0"
+      visible="false">
+    </a-image>
+
+    <!-- matt w -->
+    <a-entity
+      id="hover-matt-w"
+      target="#label-matt-w"
+      mixin="hover"
+      position="-1.5 0.52 -0.96"
+      rotation="-30 55 0"
+      geometry="width: 0.5; height: 0.6;">
+    </a-entity>
+    <a-image
+      id="label-matt-w"
+      src="/team-photo/assets/photo_labels/matt_w.png"
+      position="-3 0.7 -1.95"
+      rotation="-30 55 0"
+      scale="0.8 0.4 0"
+      visible="false">
+    </a-image>
+
+    <!-- wes r -->
+    <a-entity
+      id="hover-wes-r"
+      target="#label-wes-r"
+      mixin="hover"
+      position="-1.5 1.42 -1.3"
+      rotation="-4 48 0"
+      geometry="width: 0.4; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-wes-r"
+      src="/team-photo/assets/photo_labels/wes_r.png"
+      position="-2.5 2.325 -2.1"
+      rotation="-4 48 0"
+      scale="0.75 0.3525 0"
+      visible="false">
+    </a-image>
+
+    <!-- roflcaba -->
+    <a-entity
+      id="hover-roflcaba"
+      target="#label-roflcaba"
+      mixin="hover"
+      position="-1.6 1.725 -1.4"
+      rotation="-4 48 0"
+      geometry="width: 0.4; height: 0.18;">
+    </a-entity>
+    <a-image
+      id="label-roflcaba"
+      src="/team-photo/assets/photo_labels/roflcaba.png"
+      position="-2.5 2.325 -2.1"
+      rotation="-4 48 0"
+      scale="0.75 0.3525 0"
+      visible="false">
+    </a-image>
+
+    <!-- Matt O -->
+    <a-entity
+      id="hover-matto"
+      target="#label-matto"
+      mixin="hover"
+      position="-1.3 2.2 -1.5"
+      rotation="15 40 0"
+      geometry="width: 0.4; height: 0.5;">
+    </a-entity>
+    <a-image
+      id="label-matto"
+      src="/team-photo/assets/photo_labels/matt_o.png"
+      position="-2.6 3.8 -3"
+      rotation="15 40 0"
+      scale="0.8 0.4 0.4"
+      visible="false">
+    </a-image>
+
+    <!-- Tim M -->
+    <a-entity
+      id="hover-tim"
+      target="#label-tim"
+      mixin="hover"
+      position="-1.2 2.45 -3"
+      rotation="16 22 0"
+      geometry="width: 0.7; height: 0.8;">
+    </a-entity>
+    <a-image
+      id="label-tim"
+      src="/team-photo/assets/photo_labels/tim_m.png"
+      position="-1.2 3.25 -3"
+      rotation="16 22 0"
+      scale="0.7 0.35 0"
+      visible="false">
+    </a-image>
+
+    <!-- David -->
+    <a-entity
+      id="hover-david"
+      target="#label-david"
+      mixin="hover"
+      position="-1.2 1.6 -3"
+      rotation="0 22 0"
+      geometry="width: 0.7; height: 0.95;">
+    </a-entity>
+    <a-image
+      id="label-david"
+      src="/team-photo/assets/photo_labels/dave_b.png"
+      position="-1.45 2.5 -3.5"
+      rotation="0 22 0"
+      scale="0.6 0.3 0.3"
+      visible="false">
+    </a-image>
+
+    <!-- Esther -->
+    <a-entity
+      id="hover-esther"
+      target="#label-esther"
+      mixin="hover"
+      position="-0.4 2.35 -3"
+      rotation="0 -1 0"
+      geometry="width: 0.6; height: 0.7;">
+    </a-entity>
+    <a-image
+      id="label-esther"
+      src="/team-photo/assets/photo_labels/esther_l.png"
+      position="-0.4 3 -3"
+      rotation="15 -1 0"
+      scale="0.6 0.3 0"
+      rotation="0 -1 0"
+      visible="false">
+    </a-image>
   </a-entity>
 
   <!-- Sky -->
@@ -72,12 +1011,6 @@
     id="intro-sky"
     src="img/sky.png"
     rotation="0 270 0"></a-sky>
-
-  <a-sky
-    id="team-photo"
-    src="img/2.jpg"
-    rotation="0 270 0"
-    visible="false"></a-sky>
 
   <!-- Lighting -->
   <a-light type="directional" color="#ccc" intensity="0.2" position="-1 2 1"></a-light>
@@ -93,8 +1026,174 @@
   var scene1 = document.querySelector('#scene-intro-1');
   var scene2 = document.querySelector('#scene-intro-2');
   var introSky = document.querySelector('#intro-sky');
-  var team = document.querySelector('#team-photo');
+  var sceneTeam = document.querySelector('#scene-team-photo');
   var bothead = document.querySelector('#bot-head');
+  var button = document.querySelector('#button');
+
+  // when you mouse over nothing
+  //   all hovers are visible
+  //   all labels are invisible
+  // when you mouse over a hover
+  //   one label is visible
+  //   all other labels are invisible
+  //   all other hovers are invisible
+  var hovers = [];
+  var labels = [];
+
+  // Add all of our hover elements and labels into an array so we can
+  // iterate over them dynamically when setting state.
+  hovers.push(document.querySelector('#hover-greg'));
+  labels.push(document.querySelector('#label-greg'));
+
+  hovers.push(document.querySelector('#hover-esther'));
+  labels.push(document.querySelector('#label-esther'));
+
+  hovers.push(document.querySelector('#hover-krisk'));
+  labels.push(document.querySelector('#label-krisk'));
+
+  hovers.push(document.querySelector('#hover-mars'));
+  labels.push(document.querySelector('#label-mars'));
+
+  hovers.push(document.querySelector('#hover-juan'));
+  labels.push(document.querySelector('#label-juan'));
+
+  hovers.push(document.querySelector('#hover-tim'));
+  labels.push(document.querySelector('#label-tim'));
+
+  hovers.push(document.querySelector('#hover-matto'));
+  labels.push(document.querySelector('#label-matto'));
+
+  hovers.push(document.querySelector('#hover-david'));
+  labels.push(document.querySelector('#label-david'));
+
+  hovers.push(document.querySelector('#hover-juampy-nr'));
+  labels.push(document.querySelector('#label-juampy-nr'));
+
+  hovers.push(document.querySelector('#hover-jeff-r'));
+  labels.push(document.querySelector('#label-jeff-r'));
+
+  hovers.push(document.querySelector('#hover-matt-k'));
+  labels.push(document.querySelector('#label-matt-k'));
+
+  hovers.push(document.querySelector('#hover-matthew-t'));
+  labels.push(document.querySelector('#label-matthew-t'));
+
+  hovers.push(document.querySelector('#hover-joe-f'));
+  labels.push(document.querySelector('#label-joe-f'));
+
+  hovers.push(document.querySelector('#hover-matt-r'));
+  labels.push(document.querySelector('#label-matt-r'));
+
+  hovers.push(document.querySelector('#hover-jared-p'));
+  labels.push(document.querySelector('#label-jared-p'));
+
+  hovers.push(document.querySelector('#hover-adrian-y'));
+  labels.push(document.querySelector('#label-adrian-y'));
+
+  hovers.push(document.querySelector('#hover-ben-c'));
+  labels.push(document.querySelector('#label-ben-c'));
+
+  hovers.push(document.querySelector('#hover-jerad-b'));
+  labels.push(document.querySelector('#label-jerad-b'));
+
+  hovers.push(document.querySelector('#hover-darren-p'));
+  labels.push(document.querySelector('#label-darren-p'));
+
+  hovers.push(document.querySelector('#hover-sally-y'));
+  labels.push(document.querySelector('#label-sally-y'));
+
+  hovers.push(document.querySelector('#hover-dave-r'));
+  labels.push(document.querySelector('#label-dave-r'));
+
+  hovers.push(document.querySelector('#hover-carwin-y'));
+  labels.push(document.querySelector('#label-carwin-y'));
+
+  hovers.push(document.querySelector('#hover-carwin-poopng'));
+  labels.push(document.querySelector('#label-carwin-poopng'));
+
+  hovers.push(document.querySelector('#hover-kris-b'));
+  labels.push(document.querySelector('#label-kris-b'));
+
+  hovers.push(document.querySelector('#hover-karen-s'));
+  labels.push(document.querySelector('#label-karen-s'));
+
+  hovers.push(document.querySelector('#hover-john-h'));
+  labels.push(document.querySelector('#label-john-h'));
+
+  hovers.push(document.querySelector('#hover-danny-j'));
+  labels.push(document.querySelector('#label-danny-j'));
+
+  hovers.push(document.querySelector('#hover-jeff-e'));
+  labels.push(document.querySelector('#label-jeff-e'));
+
+  hovers.push(document.querySelector('#hover-thomas-l'));
+  labels.push(document.querySelector('#label-thomas-l'));
+
+  hovers.push(document.querySelector('#hover-helena-z'));
+  labels.push(document.querySelector('#label-helena-z'));
+
+  hovers.push(document.querySelector('#hover-seth-b'));
+  labels.push(document.querySelector('#label-seth-b'));
+
+  hovers.push(document.querySelector('#hover-jessica-m'));
+  labels.push(document.querySelector('#label-jessica-m'));
+
+  hovers.push(document.querySelector('#hover-betty-t'));
+  labels.push(document.querySelector('#label-betty-t'));
+
+  hovers.push(document.querySelector('#hover-sean-l'));
+  labels.push(document.querySelector('#label-sean-l'));
+
+  hovers.push(document.querySelector('#hover-jen-w'));
+  labels.push(document.querySelector('#label-jen-w'));
+
+  hovers.push(document.querySelector('#hover-haley-s'));
+  labels.push(document.querySelector('#label-haley-s'));
+
+  hovers.push(document.querySelector('#hover-chris-a'));
+  labels.push(document.querySelector('#label-chris-a'));
+
+  hovers.push(document.querySelector('#hover-jesse-m'));
+  labels.push(document.querySelector('#label-jesse-m'));
+
+  hovers.push(document.querySelector('#hover-mateu-ab'));
+  labels.push(document.querySelector('#label-mateu-ab'));
+
+  hovers.push(document.querySelector('#hover-maggie-g'));
+  labels.push(document.querySelector('#label-maggie-g'));
+
+  hovers.push(document.querySelector('#hover-james-s'));
+  labels.push(document.querySelector('#label-james-s'));
+
+  hovers.push(document.querySelector('#hover-nate-h'));
+  labels.push(document.querySelector('#label-nate-h'));
+
+  hovers.push(document.querySelector('#hover-andrew-b'));
+  labels.push(document.querySelector('#label-andrew-b'));
+
+  hovers.push(document.querySelector('#hover-mike-h'));
+  labels.push(document.querySelector('#label-mike-h'));
+
+  hovers.push(document.querySelector('#hover-angus-m'));
+  labels.push(document.querySelector('#label-angus-m'));
+
+  hovers.push(document.querySelector('#hover-brian-s'));
+  labels.push(document.querySelector('#label-brian-s'));
+
+  hovers.push(document.querySelector('#hover-helen-p'));
+  labels.push(document.querySelector('#label-helen-p'));
+
+  hovers.push(document.querySelector('#hover-marc-d'));
+  labels.push(document.querySelector('#label-marc-d'));
+
+  hovers.push(document.querySelector('#hover-matt-w'));
+  labels.push(document.querySelector('#label-matt-w'));
+
+  hovers.push(document.querySelector('#hover-wes-r'));
+  labels.push(document.querySelector('#label-wes-r'));
+
+  hovers.push(document.querySelector('#hover-roflcaba'));
+  labels.push(document.querySelector('#label-roflcaba'));
 
   // Sets the intro state.
   // 0 - part 1 is visible
@@ -111,22 +1210,89 @@
       introSky.setAttribute('visible', 'true');
 
       scene1.setAttribute('visible', 'false');
-      team.setAttribute('visible', 'false');
+      sceneTeam.setAttribute('visible', 'false');
 
       bothead.setAttribute('position', '0 3 -15');
     }
   }
 
+  // Sets the team photo scene state.
   function teamState() {
     // set everything invisible
-    intro1.setAttribute('visible', 'false');
-    intro2.setAttribute('visible', 'false');
+    scene1.setAttribute('visible', 'false');
+    scene2.setAttribute('visible', 'false');
+    introSky.setAttribute('visible', 'false');
+    bothead.setAttribute('visible', 'false');
 
-    // set team photo visible
-    team.setAttribute('visible', 'true');
+    // set team photo scene visible
+    sceneTeam.setAttribute('visible', 'true');
   }
 
+  // Sets state for the team photo scene's labels and hovers.
+  function setState(subject, state, keep) {
+    var iterator;
+
+    // determine what we're iterating over
+    if (subject === 'hovers') {
+      iterator = hovers;
+    }
+    if (subject === 'labels') {
+      iterator = labels;
+    }
+    // console.log('iterator', iterator);
+
+    // determine which state
+    if (state == 'visible') {
+      // set all hovers visible
+      iterator.forEach(function(iterate) {
+        iterate.setAttribute('visible', true);
+      })
+    }
+    if (state == 'invisible') {
+      // set all hovers invisible
+      iterator.forEach(function(iterate) {
+        iterate.setAttribute('visible', false);
+      })
+    }
+
+    // see if we have one to keep visible
+    if (keep) {
+      keep.setAttribute('visible', true);
+    }
+  }
+
+  //________________
+  // Event listeners
+
+  button.addEventListener('click', function() {
+    teamState();
+  });
+
+  // Each hover needs an event listener.
+  hovers.forEach(function(hover) {
+    hover.addEventListener('mouseenter', function() {
+      // set state of all hovers to invisible except one
+      setState('hovers', 'invisible', hover);
+
+      // show corresponding label
+      var hoverLabel = hover.getAttribute('target');
+      // console.log('hoverlabel', hoverLabel);
+      document.querySelector(hoverLabel).setAttribute('visible', true);
+    })
+
+    hover.addEventListener('mouseleave', function() {
+      // set state of all hovers to visible
+      setState('hovers', 'visible');
+
+      // set state of all labels to invisible
+      setState('labels', 'invisible');
+    })
+  });
+
+
+  //__________
   // Execution
+
   // introState(0);
   window.setTimeout(function() {
     introState(1);
