@@ -14,7 +14,7 @@
 
       <a-camera
         position="0 1.6 0"
-        rotation="0 0 0"
+        rotation="-5 -12 0"
         ></a-camera>
       <a-sky
         src="assets/team.jpg"
@@ -70,15 +70,33 @@
         target="#label-mars"
         mixin="hover"
         position="0.70 2.1 -3"
-        rotation="0 -6 0"
+        rotation="8 -12 0"
         geometry="width: 0.7; height: 0.7;">
       </a-entity>
       <a-image
         id="label-mars"
         src="assets/photo_labels/marissa_e.png"
         position=".7 2.8 -3.1"
-        rotation="0 -6 0"
+        rotation="8 -12 0"
         scale="0.6 0.3 0"
+        visible="false">
+      </a-image>
+
+      <!-- Prince -->
+      <a-entity
+        id="hover-prince-mars"
+        target="#label-prince-mars"
+        mixin="hover"
+        position="1 1.3 -3"
+        rotation="8 -12 0"
+        geometry="width: 0.4; height: 0.4;">
+      </a-entity>
+      <a-image
+        id="label-prince-mars"
+        src="assets/photo_labels/prince.png"
+        position="26 4 -70"
+        rotation="8 -12 5"
+        scale="3 6 0"
         visible="false">
       </a-image>
 
@@ -125,7 +143,7 @@
         mixin="hover"
         position="1.8 2.28 -2.3"
         rotation="15 -38 0"
-        geometry="width: 0.7; height: 0.65;">
+        geometry="width: 0.5; height: 0.6;">
       </a-entity>
       <a-image
         id="label-jeff-r"
@@ -133,6 +151,24 @@
         position="1.8 2.9 -2.25"
         rotation="15 -38 0"
         scale="0.5 0.25 0"
+        visible="false">
+      </a-image>
+
+      <!-- Jeff R Wig-->
+      <a-entity
+        id="hover-jeff-r-wig"
+        target="#label-jeff-r-wig"
+        mixin="hover"
+        position="1.8 1.9 -2.3"
+        rotation="15 -38 0"
+        geometry="width: 0.5; height: 0.25;">
+      </a-entity>
+      <a-image
+        id="label-jeff-r-wig"
+        src="assets/photo_labels/pixelated-powder-wig.png"
+        position="44 17 -56"
+        rotation="15 -38 0"
+        scale="11 11 0"
         visible="false">
       </a-image>
 
@@ -352,22 +388,23 @@
         visible="false">
       </a-image>
 
-      <!-- Carwin Poo.png -->
+      <!-- Carwin Deals With It -->
       <a-entity
         id="hover-carwin-poopng"
         target="#label-carwin-poopng"
         mixin="hover"
-        position="11.5 7 15"
+        position="1.8 1.8 2"
         rotation="12 -140 0"
-        geometry="width: 1; height: 0.75;">
+        geometry="width: 0.25; height: 0.25;">
       </a-entity>
       <a-image
         id="label-carwin-poopng"
-        src="assets/photo_labels/poo.png"
-        position="15.5 10.2 15"
-        rotation="-5 -140 20"
-        scale="3 3 0"
+        src="assets/photo_labels/deal-with-it.png"
+        position="13 5.25 14"
+        rotation="12 -140 -10"
+        scale="2.5 1.25 0"
         visible="false">
+        <a-animation attribute="position" from="13 8 14" to="13 5.25 14" begin="1000" dur="3000" easing="linear" repeat="indefinite"></a-animation>
       </a-image>
 
       <!-- Kris B -->
@@ -511,6 +548,24 @@
         position="0.15 3.8 4.2"
         rotation="16 -177 0"
         scale="0.8 0.4 0"
+        visible="false">
+      </a-image>
+
+      <!-- seth blue steel -->
+      <a-entity
+        id="hover-seth-blue-steel"
+        target="#label-seth-blue-steel"
+        mixin="hover"
+        position="-0.4 2.65 3.7"
+        rotation="16 -177 0"
+        geometry="width: 0.3; height: 0.3;">
+      </a-entity>
+      <a-image
+        id="label-seth-blue-steel"
+        src="assets/photo_labels/blue-steel.png"
+        position="1.75 39 71"
+        rotation="16 -177 0"
+        scale="10 20 0"
         visible="false">
       </a-image>
 
@@ -770,6 +825,24 @@
         visible="false">
       </a-image>
 
+      <!-- brian sunglasses -->
+      <a-entity
+        id="hover-brian-sunglasses"
+        target="#label-brian-sunglasses"
+        mixin="hover"
+        position="-2.8 2.1 -1.12"
+        rotation="10 75 0"
+        geometry="width: 0.3; height: 0.3;">
+      </a-entity>
+      <a-image
+        id="label-brian-sunglasses"
+        src="assets/photo_labels/sunglasses.png"
+        position="-68 14 -18"
+        rotation="10 75 2"
+        scale="5.6 2.8 0"
+        visible="true">
+      </a-image>
+
       <!-- brian s -->
       <a-entity
         id="hover-brian-s"
@@ -839,6 +912,24 @@
         position="-3 0.7 -1.95"
         rotation="-30 55 0"
         scale="0.8 0.4 0"
+        visible="false">
+      </a-image>
+
+      <!-- matt w Wig-->
+      <a-entity
+        id="hover-matt-w-wig"
+        target="#label-matt-w-wig"
+        mixin="hover"
+        position="-1.5 0 -0.96"
+        rotation="-30 55 0"
+        geometry="width: 0.5; height: 0.25;">
+      </a-entity>
+      <a-image
+        id="label-matt-w-wig"
+        src="assets/photo_labels/pixelated-powder-wig.png"
+        position="-40 -25 -26"
+        rotation="-30 55 7"
+        scale="13 13 0"
         visible="false">
       </a-image>
 
@@ -976,6 +1067,9 @@
       hovers.push(document.querySelector('#hover-mars'));
       labels.push(document.querySelector('#label-mars'));
 
+      hovers.push(document.querySelector('#hover-prince-mars'));
+      labels.push(document.querySelector('#label-prince-mars'));
+
       hovers.push(document.querySelector('#hover-juan'));
       labels.push(document.querySelector('#label-juan'));
 
@@ -993,6 +1087,9 @@
 
       hovers.push(document.querySelector('#hover-jeff-r'));
       labels.push(document.querySelector('#label-jeff-r'));
+
+      hovers.push(document.querySelector('#hover-jeff-r-wig'));
+      labels.push(document.querySelector('#label-jeff-r-wig'));
 
       hovers.push(document.querySelector('#hover-matt-k'));
       labels.push(document.querySelector('#label-matt-k'));
@@ -1057,6 +1154,9 @@
       hovers.push(document.querySelector('#hover-seth-b'));
       labels.push(document.querySelector('#label-seth-b'));
 
+      hovers.push(document.querySelector('#hover-seth-blue-steel'));
+      labels.push(document.querySelector('#label-seth-blue-steel'));
+
       hovers.push(document.querySelector('#hover-jessica-m'));
       labels.push(document.querySelector('#label-jessica-m'));
 
@@ -1102,6 +1202,9 @@
       hovers.push(document.querySelector('#hover-brian-s'));
       labels.push(document.querySelector('#label-brian-s'));
 
+      hovers.push(document.querySelector('#hover-brian-sunglasses'));
+      labels.push(document.querySelector('#label-brian-sunglasses'));
+
       hovers.push(document.querySelector('#hover-helen-p'));
       labels.push(document.querySelector('#label-helen-p'));
 
@@ -1110,6 +1213,9 @@
 
       hovers.push(document.querySelector('#hover-matt-w'));
       labels.push(document.querySelector('#label-matt-w'));
+
+      hovers.push(document.querySelector('#hover-matt-w-wig'));
+      labels.push(document.querySelector('#label-matt-w-wig'));
 
       hovers.push(document.querySelector('#hover-wes-r'));
       labels.push(document.querySelector('#label-wes-r'));
