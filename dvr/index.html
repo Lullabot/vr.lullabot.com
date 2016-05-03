@@ -17,32 +17,76 @@
   <a-entity
     id="scene-intro-1">
 
-    <!-- Text -->
-    <a-image
-      src="img/text-intro-1.png"
-      position="0 3 -8.1"
-      scale="3 3 1"></a-image>
-
-    <!-- Icons -->
-    <a-image
-      src="img/icons-headsets.png"
-      position="0 1 -8"
-      scale="4.5 2.5 1"></a-image>
-    <a-image
-      src="img/ui-loading-bar.png"
-      position="0 -1 -7.9"
-      scale="2 1.5 1"></a-image>
     <a-entity
-      geometry="primitive: plane; height: .3; width: .01"
-      material="color: #FFE683"
-      position="0 -0.965 -7.8">
-      <a-animation
-        attribute="geometry.width"
-        to="2.75"
-        dur="7000"
-        begin="1000"
-        easing="linear"></a-animation>
+      id="forward-group">
+      <!-- Text -->
+      <a-image
+        src="img/text-intro-1.png"
+        position="0 3 -8.1"
+        scale="3 3 1"></a-image>
+
+      <!-- Icons -->
+      <a-image
+        src="img/icons-headsets.png"
+        position="0 1 -8"
+        scale="4.5 2.5 1"></a-image>
+      <a-image
+        src="img/ui-loading-bar.png"
+        position="0 -1 -7.9"
+        scale="2 1.5 1"></a-image>
+      <a-entity
+        geometry="primitive: plane; height: .3; width: .01"
+        material="color: #FFE683"
+        position="0 -0.965 -7.8">
+        <a-animation
+          attribute="geometry.width"
+          to="2.75"
+          dur="7000"
+          begin="1000"
+          easing="linear"></a-animation>
+      </a-entity>
     </a-entity>
+
+    <a-entity
+      id="bottom-group"
+      position="0 -5 0"
+      rotation="-90 0 0">
+
+      <a-model
+        id="bot-head"
+        src="model/lullabot-head-low-poly-white.dae"
+        position="0 3 -8"
+        scale="0.7 0.7 0.7"
+        look-at="[camera]">
+      </a-model>
+      <!-- Text -->
+      <a-image
+        src="img/text-intro-1.png"
+        position="0 3 -8.1"
+        scale="3 3 1"></a-image>
+
+      <!-- Icons -->
+      <a-image
+        src="img/icons-headsets.png"
+        position="0 1 -8"
+        scale="4.5 2.5 1"></a-image>
+      <a-image
+        src="img/ui-loading-bar.png"
+        position="0 -1 -7.9"
+        scale="2 1.5 1"></a-image>
+      <a-entity
+        geometry="primitive: plane; height: .3; width: .01"
+        material="color: #FFE683"
+        position="0 -0.965 -7.8">
+        <a-animation
+          attribute="geometry.width"
+          to="2.75"
+          dur="7000"
+          begin="1000"
+          easing="linear"></a-animation>
+      </a-entity>
+    </a-entity>
+
   </a-entity>
 
   <!-- Scene 2: Intro screen 2 -->
@@ -1314,7 +1358,7 @@
       introSky.setAttribute('visible', 'true');
 
       scene2.setAttribute('visible', 'false');
-      team.setAttribute('visible', 'false');
+      sceneTeam.setAttribute('visible', 'false');
     } else {
       scene2.setAttribute('visible', 'true');
       introSky.setAttribute('visible', 'true');
@@ -1403,7 +1447,7 @@
   //__________
   // Execution
 
-  // introState(0);
+  introState(0);
   window.setTimeout(function() {
     introState(1);
   }, seconds*1000);
