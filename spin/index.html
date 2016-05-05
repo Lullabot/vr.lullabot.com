@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.png">
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    <!--<script src="./js/aframe-text-component.min.js"></script>
+    <script src="./js/fonts/helvetiker_regular.typeface.js"></script>-->
+  </head>
+  <body>
+    <!--<a-assets>
+      <a-mixin id="font" text="font: helvetiker_regular"></a-mixin>
+    </a-assets>-->
+    <a-scene>
+
+      <a-camera position="0 1.6 0"></a-camera>
+      <!-- <a-videosphere src="./videosphere/Lullabot-360.mp4" autoplay="true" loop="true" rotation="0 180 0" color="white"></a-videosphere> -->
+
+      <!--<a-entity mixin="font" text="text: We create digital experiences for the world's best brands."></a-entity>-->
+
+      <a-model src="/model/lullabot-full.dae" position="0 0 -2" rotation="0 -20 0">
+        <a-animation attribute="rotation" from="0 -30 0" to="0 330 0" dur="15000" easing="linear" repeat="inifite"></a-animation>
+      </a-model>
+
+      <a-image src="/img/greeting.png" position="0 2.6 -3" width="4"></a-image>
+      <a-cylinder position="0 0 0" rotation="0 0 0" height="2" radius="3.9" side="back" open-ended="true" color="white" opacity=".5"></a-cylinder>
+      <a-entity
+        geometry="primitive: cylinder;
+          radius: 4;
+          height: 1.6;
+          openEnded: true;"
+        material="src:url(/img/client-logos.png);
+          repeat:10 1;
+          side:back;
+          color:#37a9ef;
+          opacity:0.5;
+          height:20">
+          <a-animation attribute="rotation" from="0 330 0" to="0 -30 0" dur="150000" easing="linear" repeat="inifite"></a-animation>
+      </a-entity>
+
+      <a-sky color="#ECECEC"></a-sky>
+      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+  </body>
+</html>
