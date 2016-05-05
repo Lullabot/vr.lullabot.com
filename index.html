@@ -1135,7 +1135,7 @@
     if (enterVRButton !== null) {
       enterVRButton.addEventListener('click', function(event) {
         addClass(document.querySelector('#firstLoadScreen'), 'js-hide');
-        addClass(enterVRButton, 'js-hide');
+        addClass(document.querySelector('.a-enter-vr'), 'js-hide');
       }, false);
       window.clearInterval(vrButtonInterval);
     }
