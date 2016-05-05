@@ -24,7 +24,7 @@
     width: 75%;
     margin: 0 auto;
   }
-  
+
   .a-enter-vr-modal {
     display: none!important;
   }
@@ -1413,8 +1413,11 @@
 
     hover.addEventListener('click', function() {
       var egg = hover.getAttribute('egg-target');
-      if (egg !== null) {
+      var is_visible = document.querySelector(egg).getAttribute('visible');
+      if (egg !== null && is_visible === false) {
         document.querySelector(egg).setAttribute('visible', true);
+      } else {
+        document.querySelector(egg).setAttribute('visible', false);
       }
     })
 
