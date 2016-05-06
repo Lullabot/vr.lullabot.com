@@ -2,8 +2,7 @@
 <html>
 <head>
 <title>Lullabot Team Photo</title>
-<!-- Production Version, Minified -->
-<script src="./dist/aframe-v0.2.0.min.js"></script>
+<script src="https://aframe.io/releases/latest/aframe.min.js"></script>
 <style type="text/css">
   body {
     position: relative;
@@ -81,47 +80,38 @@
 
 <a-scene>
 
-  <!-- Sky -->
-  <a-sky
-    id="intro-sky"
-    src="./img/sky.png"
-    rotation="0 270 0">
-  </a-sky>
-
   <a-camera
-    position="0 1.6 0">
-    <a-cursor></a-cursor>
-  </a-camera>
+    position="0 1.6 0"></a-camera>
+
+  <a-model
+    id="bot-head"
+    src="/dvr/model/lullabot-head-low-poly-white.dae"
+    position="0 3 -8"
+    scale="0.7 0.7 0.7"
+    look-at="[camera]">
+  </a-model>
 
   <!-- Scene 2: Intro screen 2 -->
   <a-entity
     id="scene-intro-2"
     visible="false">
 
-    <a-collada-model
-      id="bot-head"
-      src="./dvr/model/lullabot-head-low-poly-white.dae"
-      position="0 3 -8"
-      scale="0.7 0.7 0.7"
-      look-at="[camera]">
-    </a-collada-model>
-
     <!-- Text -->
     <a-image
-      src="./dvr/img/text-intro-2.png"
+      src="/dvr/img/text-intro-2.png"
       position="0 3 -18.1"
-      scale="8 8 2"></a-image>
+      scale="4 4 1"></a-image>
 
     <!-- Icons -->
     <a-image
-      src="./dvr/img/icons-headset-click.png"
+      src="/dvr/img/icons-headset-click.png"
       position="0 1 -18"
-      scale="4.5 2.5 2"></a-image>
+      scale="2.25 1.25 1"></a-image>
     <a-image
       id="button"
-      src="./dvr/img/button-gotit.png"
-      position="0 -2.6 -18.1"
-      scale="3.5 3.5 2"></a-image>
+      src="/dvr/img/button-gotit.png"
+      position="0 -2 -18.1"
+      scale="1.75 1.75 1"></a-image>
   </a-entity>
 
   <!-- Scene 3: Team Photo -->
@@ -130,7 +120,7 @@
     visible="false">
 
     <a-sky
-      src="./team-photo/assets/team.jpg"
+      src="/team-photo/assets/team.jpg"
       radius="100"></a-sky>
 
     <!-- Too bad you can't use mouse/enter/leave in a mixin -->
@@ -139,6 +129,8 @@
       geometry="primitive: plane; width: 1; height: 1;"
       material="color: #FFFFFF; opacity: 0">
     </a-mixin>
+
+    <a-plane rotation="-90 0 0" position="0 -3 0" src="/dvr/img/disk.png"></a-plane>
 
     <!-- Greg -->
     <a-entity
@@ -151,10 +143,10 @@
     </a-entity>
     <a-image
       id="label-greg"
-      src="./team-photo/assets/photo_labels/greg_d.png"
+      src="/team-photo/assets/photo_labels/greg_d.png"
       position="-0.2 2.4 -3.5"
       rotation="0 0 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -169,10 +161,10 @@
     </a-entity>
     <a-image
       id="label-krisk"
-      src="./team-photo/assets/photo_labels/kris_k.png"
+      src="/team-photo/assets/photo_labels/kris_k.png"
       position="0.1 0.85 -3.5"
       rotation="0 -1 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -188,20 +180,20 @@
     </a-entity>
     <a-image
       id="label-mars"
-      src="./team-photo/assets/photo_labels/marissa_e.png"
+      src="/team-photo/assets/photo_labels/marissa_e.png"
       position=".7 2.8 -3.1"
       rotation="8 -12 0"
-      scale="1.2 0.6 0"
+      scale="0.6 0.3 0"
       visible="false">
     </a-image>
 
     <!-- Prince -->
     <a-image
       id="label-prince-mars"
-      src="./team-photo/assets/photo_labels/prince.png"
+      src="/team-photo/assets/photo_labels/prince.png"
       position="26 4 -70"
       rotation="8 -12 5"
-      scale="6 12 0"
+      scale="3 6 0"
       visible="false">
     </a-image>
 
@@ -216,10 +208,10 @@
     </a-entity>
     <a-image
       id="label-juampy-nr"
-      src="./team-photo/assets/photo_labels/juampy_nr.png"
+      src="/team-photo/assets/photo_labels/juampy_nr.png"
       position="2 0.9 -3"
       rotation="-25 -25 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -234,10 +226,10 @@
     </a-entity>
     <a-image
       id="label-juan"
-      src="./team-photo/assets/photo_labels/juan_o.png"
+      src="/team-photo/assets/photo_labels/juan_o.png"
       position="1.65 2.1 -3.1"
       rotation="0 -25 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -253,20 +245,20 @@
     </a-entity>
     <a-image
       id="label-jeff-r"
-      src="./team-photo/assets/photo_labels/jeff_r.png"
+      src="/team-photo/assets/photo_labels/jeff_r.png"
       position="1.8 2.9 -2.25"
       rotation="15 -38 0"
-      scale="1.0 0.5 0"
+      scale="0.5 0.25 0"
       visible="false">
     </a-image>
 
     <!-- Jeff R Wig-->
     <a-image
       id="label-jeff-r-wig"
-      src="./team-photo/assets/photo_labels/pixelated-powder-wig.png"
+      src="/team-photo/assets/photo_labels/pixelated-powder-wig.png"
       position="1.7 2.28 -2.2"
       rotation="15 -38 0"
-      scale="0.7 0.7 0"
+      scale=".5 .5 0"
       visible="false">
     </a-image>
 
@@ -281,10 +273,10 @@
     </a-entity>
     <a-image
       id="label-matt-k"
-      src="./team-photo/assets/photo_labels/matt_k.png"
+      src="/team-photo/assets/photo_labels/matt_k.png"
       position="2.8 2.35 -1.9"
       rotation="0 -57 0"
-      scale="1.2 0.6 0"
+      scale="0.6 0.3 0"
       visible="false">
     </a-image>
 
@@ -299,10 +291,10 @@
     </a-entity>
     <a-image
       id="label-matthew-t"
-      src="./team-photo/assets/photo_labels/matthew_t_speak.png"
-      position="2.4 3.35 -1.4"
+      src="/team-photo/assets/photo_labels/matthew_t_speak.png"
+      position="2.4 3.25 -1.4"
       rotation="17 -61 0"
-      scale="2 1 0"
+      scale="1 0.5 0"
       visible="false">
     </a-image>
 
@@ -317,10 +309,10 @@
     </a-entity>
     <a-image
       id="label-joe-f"
-      src="./team-photo/assets/photo_labels/joe_f.png"
+      src="/team-photo/assets/photo_labels/joe_f.png"
       position="2.8 1.16 -1.2"
       rotation="-22 -67 0"
-      scale="1.0 0.5 0"
+      scale="0.5 0.25 0"
       visible="false">
     </a-image>
 
@@ -335,10 +327,10 @@
     </a-entity>
     <a-image
       id="label-matt-r"
-      src="./team-photo/assets/photo_labels/matt_r.png"
+      src="/team-photo/assets/photo_labels/matt_r.png"
       position="2.8 3.2 -0.95"
       rotation="20 -71 0"
-      scale="1.0 0.5 0"
+      scale="0.5 0.25 0"
       visible="false">
     </a-image>
 
@@ -353,10 +345,10 @@
     </a-entity>
     <a-image
       id="label-jared-p"
-      src="./team-photo/assets/photo_labels/jared_p.png"
+      src="/team-photo/assets/photo_labels/jared_p.png"
       position="3.5 2.3 -0.425"
       rotation="0 -84 0"
-      scale="1.2 0.6 0"
+      scale="0.6 0.3 0"
       visible="false">
     </a-image>
 
@@ -371,10 +363,10 @@
     </a-entity>
     <a-image
       id="label-adrian-y"
-      src="./team-photo/assets/photo_labels/adrian_y.png"
-      position="3 3.0 -0.15"
+      src="/team-photo/assets/photo_labels/adrian_y.png"
+      position="3 2.95 -0.15"
       rotation="14 -88 0"
-      scale="1.0 0.5 0"
+      scale="0.5 0.25 0"
       visible="false">
     </a-image>
 
@@ -389,10 +381,10 @@
     </a-entity>
     <a-image
       id="label-ben-c"
-      src="./team-photo/assets/photo_labels/ben_c.png"
+      src="/team-photo/assets/photo_labels/ben_c.png"
       position="2.8 3.05 0.55"
       rotation="16 -101 0"
-      scale="1.0 0.5 0"
+      scale="0.5 0.25 0"
       visible="false">
     </a-image>
 
@@ -407,10 +399,10 @@
     </a-entity>
     <a-image
       id="label-jerad-b"
-      src="./team-photo/assets/photo_labels/jerad_b.png"
+      src="/team-photo/assets/photo_labels/jerad_b.png"
       position="3.1 2.25 .7"
       rotation="-2 -103 0"
-      scale="1.0 0.5 0"
+      scale="0.5 0.25 0"
       visible="false">
     </a-image>
 
@@ -425,10 +417,10 @@
     </a-entity>
     <a-image
       id="label-darren-p"
-      src="./team-photo/assets/photo_labels/darren_p.png"
+      src="/team-photo/assets/photo_labels/darren_p.png"
       position="2.8 1.1 1.2"
       rotation="-23 -113 0"
-      scale="1.16 0.58 0"
+      scale="0.58 0.29 0"
       visible="false">
     </a-image>
 
@@ -443,10 +435,10 @@
     </a-entity>
     <a-image
       id="label-sally-y"
-      src="./team-photo/assets/photo_labels/sally_y.png"
+      src="/team-photo/assets/photo_labels/sally_y.png"
       position="2.5 2.6 1.8"
       rotation="4 -127 0"
-      scale="1.16 0.58 0"
+      scale="0.58 0.29 0"
       visible="false">
     </a-image>
 
@@ -461,10 +453,10 @@
     </a-entity>
     <a-image
       id="label-dave-r"
-      src="./team-photo/assets/photo_labels/dave_r_speak.png"
+      src="/team-photo/assets/photo_labels/dave_r_speak.png"
       position="2.4 2.05 2.3"
       rotation="-8 -134 2"
-      scale="2.4 1.2 0"
+      scale="1.2 0.6 0"
       visible="false">
     </a-image>
 
@@ -480,27 +472,27 @@
     </a-entity>
     <a-image
       id="label-carwin-y"
-      src="./team-photo/assets/photo_labels/carwin_y.png"
+      src="/team-photo/assets/photo_labels/carwin_y.png"
       position="2.2 3.05 2.5"
       rotation="12 -140 0"
-      scale="1.2 0.6 0"
+      scale="0.6 0.3 0"
       visible="false">
     </a-image>
 
     <!-- Carwin Deals With It -->
     <a-image
       id="label-carwin-poopng"
-      src="./team-photo/assets/photo_labels/deal-with-it.png"
+      src="/team-photo/assets/photo_labels/deal-with-it.png"
       position="1.8 2.05 1.9"
       rotation="12 -140 -10"
-      scale=".58 .28 0"
+      scale=".3125 .15625 0"
       visible="false">
       <a-animation
         attribute="position"
-        from="1.8 2.5 1.9"
+        from="1.8 3 1.9"
         to="1.75 2.1 1.9"
         begin="1000"
-        dur="2000"
+        dur="3000"
         easing="linear"
         repeat="indefinite"></a-animation>
     </a-image>
@@ -516,10 +508,10 @@
     </a-entity>
     <a-image
       id="label-kris-b"
-      src="./team-photo/assets/photo_labels/kris_b.png"
+      src="/team-photo/assets/photo_labels/kris_b.png"
       position="1.8 3.2 2.8"
       rotation="17 -148 0"
-      scale="1.2 0.6 0"
+      scale="0.6 0.3 0"
       visible="false">
     </a-image>
 
@@ -534,10 +526,10 @@
     </a-entity>
     <a-image
       id="label-karen-s"
-      src="./team-photo/assets/photo_labels/karen_s_speak.png"
+      src="/team-photo/assets/photo_labels/karen_s_speak.png"
       position="1.6 0.8 3.2"
       rotation="-28 -153 0"
-      scale="2.4 1.2 0"
+      scale="1.2 0.6 0"
       visible="false">
     </a-image>
 
@@ -552,10 +544,10 @@
     </a-entity>
     <a-image
       id="label-john-h"
-      src="./team-photo/assets/photo_labels/john_h.png"
+      src="/team-photo/assets/photo_labels/john_h.png"
       position="1.7 2.3 3.5"
       rotation="-1 -155 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -570,10 +562,10 @@
     </a-entity>
     <a-image
       id="label-danny-j"
-      src="./team-photo/assets/photo_labels/danny_j.png"
-      position="1.6 3.75 3.8"
+      src="/team-photo/assets/photo_labels/danny_j.png"
+      position="1.6 3.7 3.8"
       rotation="18 -158 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -588,10 +580,10 @@
     </a-entity>
     <a-image
       id="label-jeff-e"
-      src="./team-photo/assets/photo_labels/jeff_e_speak.png"
+      src="/team-photo/assets/photo_labels/jeff_e_speak.png"
       position="0.9 4 4"
       rotation="17 -162 3"
-      scale="3.2 1.6 0"
+      scale="1.6 0.8 0"
       visible="false">
     </a-image>
 
@@ -606,10 +598,10 @@
     </a-entity>
     <a-image
       id="label-thomas-l"
-      src="./team-photo/assets/photo_labels/thomas_l.png"
+      src="/team-photo/assets/photo_labels/thomas_l.png"
       position="0.5 1.85 4.2"
       rotation="-9 -173 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -624,10 +616,10 @@
     </a-entity>
     <a-image
       id="label-helena-z"
-      src="./team-photo/assets/photo_labels/helena_z_speak.png"
+      src="/team-photo/assets/photo_labels/helena_z_speak.png"
       position="0.25 0.4 4.4"
       rotation="-35 -177 0"
-      scale="3.4 1.7 0"
+      scale="1.7 0.85 0"
       visible="false">
     </a-image>
 
@@ -643,20 +635,20 @@
     </a-entity>
     <a-image
       id="label-seth-b"
-      src="./team-photo/assets/photo_labels/seth_b.png"
-      position="0.15 3.85 4.2"
+      src="/team-photo/assets/photo_labels/seth_b.png"
+      position="0.15 3.8 4.2"
       rotation="16 -177 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
     <!-- seth blue steel -->
     <a-image
       id="label-seth-blue-steel"
-      src="./team-photo/assets/photo_labels/blue-steel.png"
+      src="/team-photo/assets/photo_labels/blue-steel.png"
       position="0.1 3.4 3.3"
       rotation="16 -177 0"
-      scale="0.8 1.7 0"
+      scale=".5 1 0"
       visible="false">
     </a-image>
 
@@ -675,10 +667,10 @@
     </a-entity>
     <a-image
       id="label-jessica-m"
-      src="./team-photo/assets/photo_labels/jessica_m.png"
+      src="/team-photo/assets/photo_labels/jessica_m.png"
       position="-0.9 3.15 4.4"
       rotation="8 168 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -693,10 +685,10 @@
     </a-entity>
     <a-image
       id="label-betty-t"
-      src="./team-photo/assets/photo_labels/betty_t.png"
+      src="/team-photo/assets/photo_labels/betty_t.png"
       position="-1.4 1.95 4"
       rotation="-7 160 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -711,10 +703,10 @@
     </a-entity>
     <a-image
       id="label-sean-l"
-      src="./team-photo/assets/photo_labels/sean_l.png"
+      src="/team-photo/assets/photo_labels/sean_l.png"
       position="-1.6 3.6 4"
       rotation="9 160 0"
-      scale="1.8 0.9 0"
+      scale="0.9 0.45 0"
       visible="false">
     </a-image>
 
@@ -729,10 +721,10 @@
     </a-entity>
     <a-image
       id="label-jen-w"
-      src="./team-photo/assets/photo_labels/jen_w.png"
+      src="/team-photo/assets/photo_labels/jen_w.png"
       position="-1.9 0.6 3.3"
       rotation="-28 150 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -747,10 +739,10 @@
     </a-entity>
     <a-image
       id="label-haley-s"
-      src="./team-photo/assets/photo_labels/haley_s.png"
+      src="/team-photo/assets/photo_labels/haley_s.png"
       position="-1.875 2.7 3"
       rotation="7 147 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -765,10 +757,10 @@
     </a-entity>
     <a-image
       id="label-chris-a"
-      src="./team-photo/assets/photo_labels/chris_a.png"
+      src="/team-photo/assets/photo_labels/chris_a.png"
       position="-2.65 3.4 2.8"
       rotation="16 136 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -783,10 +775,10 @@
     </a-entity>
     <a-image
       id="label-jesse-m"
-      src="./team-photo/assets/photo_labels/jesse_m.png"
-      position="-2.65 2.35 2.6"
+      src="/team-photo/assets/photo_labels/jesse_m.png"
+      position="-2.65 2.3 2.6"
       rotation="0 134 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -801,10 +793,10 @@
     </a-entity>
     <a-image
       id="label-mateu-ab"
-      src="./team-photo/assets/photo_labels/mateu_ab.png"
+      src="/team-photo/assets/photo_labels/mateu_ab.png"
       position="-2.8 1.3 2.4"
       rotation="-18 131 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -819,10 +811,10 @@
     </a-entity>
     <a-image
       id="label-maggie-g"
-      src="./team-photo/assets/photo_labels/maggie_g.png"
+      src="/team-photo/assets/photo_labels/maggie_g.png"
       position="-3 3.1 2.3"
       rotation="11 128 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -837,10 +829,10 @@
     </a-entity>
     <a-image
       id="label-james-s"
-      src="./team-photo/assets/photo_labels/james_s.png"
+      src="/team-photo/assets/photo_labels/james_s.png"
       position="-3.1 0.7 2"
       rotation="-30 123 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -855,10 +847,10 @@
     </a-entity>
     <a-image
       id="label-nate-h"
-      src="./team-photo/assets/photo_labels/nate_h.png"
+      src="/team-photo/assets/photo_labels/nate_h.png"
       position="-4 3.3 1.8"
       rotation="8 115 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -873,10 +865,10 @@
     </a-entity>
     <a-image
       id="label-andrew-b"
-      src="./team-photo/assets/photo_labels/andrew_b.png"
+      src="/team-photo/assets/photo_labels/andrew_b.png"
       position="-4.1 3.55 0.8"
       rotation="14 100 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -891,10 +883,10 @@
     </a-entity>
     <a-image
       id="label-mike-h"
-      src="./team-photo/assets/photo_labels/mike_h.png"
+      src="/team-photo/assets/photo_labels/mike_h.png"
       position="-4.5 2.6 0.25"
       rotation="0 93 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -909,10 +901,10 @@
     </a-entity>
     <a-image
       id="label-angus-m"
-      src="./team-photo/assets/photo_labels/angus_m.png"
+      src="/team-photo/assets/photo_labels/angus_m.png"
       position="-4 0.8 0"
       rotation="-26 90 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -928,20 +920,20 @@
     </a-entity>
     <a-image
       id="label-brian-s"
-      src="./team-photo/assets/photo_labels/brian_s.png"
+      src="/team-photo/assets/photo_labels/brian_s.png"
       position="-3.8 3.3 -0.9"
       rotation="10 75 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
     <!-- brian sunglasses -->
     <a-image
       id="label-brian-sunglasses"
-      src="./team-photo/assets/photo_labels/sunglasses.png"
-      position="-1.55 1.87 -0.4"
+      src="/team-photo/assets/photo_labels/sunglasses.png"
+      position="-1.5 1.85 -0.4"
       rotation="10 75 2"
-      scale=".2 .1 0"
+      scale=".175 .0875 0"
       visible="false">
     </a-image>
 
@@ -956,10 +948,10 @@
     </a-entity>
     <a-image
       id="label-helen-p"
-      src="./team-photo/assets/photo_labels/helen_p.png"
+      src="/team-photo/assets/photo_labels/helen_p.png"
       position="-3.8 1.6 -1.4"
       rotation="-12 70 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
@@ -974,10 +966,10 @@
     </a-entity>
     <a-image
       id="label-marc-d"
-      src="./team-photo/assets/photo_labels/marc_d_speaks.png"
+      src="/team-photo/assets/photo_labels/marc_d_speaks.png"
       position="-3 3.6 -1.95"
       rotation="13 57 0"
-      scale="2.8 1.4 0"
+      scale="1.4 0.7 0"
       visible="false">
     </a-image>
 
@@ -993,20 +985,20 @@
     </a-entity>
     <a-image
       id="label-matt-w"
-      src="./team-photo/assets/photo_labels/matt_w.png"
+      src="/team-photo/assets/photo_labels/matt_w.png"
       position="-3 0.7 -1.95"
       rotation="-30 55 0"
-      scale="1.6 0.8 0"
+      scale="0.8 0.4 0"
       visible="false">
     </a-image>
 
     <!-- matt w Wig-->
     <a-image
       id="label-matt-w-wig"
-      src="./team-photo/assets/photo_labels/pixelated-powder-wig.png"
-      position="-1.38 0.68 -0.9"
+      src="/team-photo/assets/photo_labels/pixelated-powder-wig.png"
+      position="-1.4 0.55 -0.9"
       rotation="-30 55 7"
-      scale="0.7 0.7 0"
+      scale=".5 .5 0"
       visible="false">
     </a-image>
 
@@ -1022,17 +1014,17 @@
     </a-entity>
     <a-image
       id="label-wes-r"
-      src="./team-photo/assets/photo_labels/wes_r.png"
+      src="/team-photo/assets/photo_labels/wes_r.png"
       position="-2.5 2.325 -2.1"
       rotation="-4 48 0"
-      scale="1.5 0.705 0"
+      scale="0.75 0.3525 0"
       visible="false">
     </a-image>
 
     <!-- roflcaba -->
     <a-image
       id="label-roflcaba"
-      src="./team-photo/assets/photo_labels/roflcaba.png"
+      src="/team-photo/assets/photo_labels/roflcaba.png"
       position="-1 1.9 -0.8"
       rotation="-4 48 0"
       scale="0.3 0.2 0"
@@ -1050,10 +1042,10 @@
     </a-entity>
     <a-image
       id="label-matto"
-      src="./team-photo/assets/photo_labels/matt_o.png"
+      src="/team-photo/assets/photo_labels/matt_o.png"
       position="-2.6 3.8 -3"
       rotation="15 40 0"
-      scale="1.6 0.8 0.4"
+      scale="0.8 0.4 0.4"
       visible="false">
     </a-image>
 
@@ -1068,10 +1060,10 @@
     </a-entity>
     <a-image
       id="label-tim"
-      src="./team-photo/assets/photo_labels/tim_m.png"
+      src="/team-photo/assets/photo_labels/tim_m.png"
       position="-1.2 3.25 -3"
       rotation="16 22 0"
-      scale="1.4 0.7 0"
+      scale="0.7 0.35 0"
       visible="false">
     </a-image>
 
@@ -1086,10 +1078,10 @@
     </a-entity>
     <a-image
       id="label-david"
-      src="./team-photo/assets/photo_labels/dave_b.png"
+      src="/team-photo/assets/photo_labels/dave_b.png"
       position="-1.45 2.5 -3.5"
       rotation="0 22 0"
-      scale="1.2 0.6 0.3"
+      scale="0.6 0.3 0.3"
       visible="false">
     </a-image>
 
@@ -1104,18 +1096,21 @@
     </a-entity>
     <a-image
       id="label-esther"
-      src="./team-photo/assets/photo_labels/esther_l.png"
+      src="/team-photo/assets/photo_labels/esther_l.png"
       position="-0.4 3 -3"
       rotation="15 -1 0"
-      scale="1.2 0.6 0"
+      scale="0.6 0.3 0"
       rotation="0 -1 0"
       visible="false">
     </a-image>
 
   </a-entity>
 
-  <!-- Floppy Disk -->
-  <a-image rotation="-90 0 0" position="0 -3 0" src="./dvr/img/disk.png" scale="3.0 3.0 3.0"></a-image>
+  <!-- Sky -->
+  <a-sky
+    id="intro-sky"
+    src="img/sky.png"
+    rotation="0 270 0"></a-sky>
 
   <!-- Lighting -->
   <a-light type="directional" color="#ccc" intensity="0.2" position="-1 2 1"></a-light>
@@ -1442,7 +1437,7 @@
   introState(0);
   window.setTimeout(function() {
     introState(1);
-  }, 1000);
+  }, seconds*1000);
   // teamState();
 </script>
 </body>
