@@ -81,18 +81,17 @@
 
 <a-scene>
 
+  <!-- Sky -->
+  <a-sky
+    id="intro-sky"
+    src="img/sky.png"
+    rotation="0 270 0">
+  </a-sky>
+
   <a-camera
     position="0 1.6 0">
     <a-cursor></a-cursor>
   </a-camera>
-
-  <a-collada-model
-    id="bot-head"
-    src="/dvr/model/lullabot-head-low-poly-white.dae"
-    position="0 3 -8"
-    scale="0.7 0.7 0.7"
-    look-at="[camera]">
-  </a-collada-model>
 
   <!-- Scene 2: Intro screen 2 -->
   <a-entity
@@ -115,6 +114,14 @@
       src="/dvr/img/button-gotit.png"
       position="0 -2.6 -18.1"
       scale="3.5 3.5 2"></a-image>
+
+      <a-collada-model
+        id="bot-head"
+        src="/dvr/model/lullabot-head-low-poly-white.dae"
+        position="0 3 -8"
+        scale="0.7 0.7 0.7"
+        look-at="[camera]">
+      </a-collada-model>
   </a-entity>
 
   <!-- Scene 3: Team Photo -->
@@ -1105,16 +1112,10 @@
       visible="false">
     </a-image>
 
+    <!-- Floppy Disk -->
+    <a-image rotation="-90 0 0" position="0 -3 0" src="/dvr/img/disk.png" scale="3.0 3.0 3.0"></a-image>
+
   </a-entity>
-
-  <!-- Sky -->
-  <a-sky
-    id="intro-sky"
-    src="img/sky.png"
-    rotation="0 270 0"></a-sky>
-
-  <!-- Floppy Disk -->
-  <a-image rotation="-90 0 0" position="0 -3 0" src="/dvr/img/disk.png" scale="3.0 3.0 3.0"></a-image>
 
   <!-- Lighting -->
   <a-light type="directional" color="#ccc" intensity="0.2" position="-1 2 1"></a-light>
