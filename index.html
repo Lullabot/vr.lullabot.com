@@ -85,41 +85,10 @@
   <a-camera
     position="0 1.6 0"></a-camera>
 
-  <a-model
-    id="bot-head"
-    src="/dvr/model/lullabot-head-low-poly-white.dae"
-    position="0 3 -8"
-    scale="0.7 0.7 0.7"
-    look-at="[camera]">
-  </a-model>
-
-  <!-- Scene 2: Intro screen 2 -->
-  <a-entity
-    id="scene-intro-2"
-    visible="false">
-
-    <!-- Text -->
-    <a-image
-      src="/dvr/img/text-intro-2.png"
-      position="0 3 -18.1"
-      scale="4 4 1"></a-image>
-
-    <!-- Icons -->
-    <a-image
-      src="/dvr/img/icons-headset-click.png"
-      position="0 1 -18"
-      scale="2.25 1.25 1"></a-image>
-    <a-image
-      id="button"
-      src="/dvr/img/button-gotit.png"
-      position="0 -2 -18.1"
-      scale="1.75 1.75 1"></a-image>
-  </a-entity>
-
   <!-- Scene 3: Team Photo -->
   <a-entity
     id="scene-team-photo"
-    visible="false">
+    visible="true">
 
     <a-sky
       src="/team-photo/assets/team.jpg"
@@ -1321,19 +1290,20 @@
   // 0 - part 1 is visible
   // 1 - part 2 is visible
   function introState(which) {
-    if (which === 0) {
-      introSky.setAttribute('visible', 'true');
+    // sceneTeam.setAttribute('visible', 'true');
+    // if (which === 0) {
+    //   introSky.setAttribute('visible', 'true');
 
-      scene2.setAttribute('visible', 'true');
-      sceneTeam.setAttribute('visible', 'false');
-    } else {
-      scene2.setAttribute('visible', 'true');
-      introSky.setAttribute('visible', 'true');
+    //   scene2.setAttribute('visible', 'true');
+    //   sceneTeam.setAttribute('visible', 'false');
+    // } else {
+    //   scene2.setAttribute('visible', 'true');
+    //   introSky.setAttribute('visible', 'true');
 
-      sceneTeam.setAttribute('visible', 'false');
+    //   sceneTeam.setAttribute('visible', 'false');
 
-      bothead.setAttribute('position', '0 3 -15');
-    }
+    //   bothead.setAttribute('position', '0 3 -15');
+    // }
   }
 
   // Sets the team photo scene state.
@@ -1389,9 +1359,9 @@
   //________________
   // Event listeners
 
-  button.addEventListener('click', function() {
-    teamState();
-  });
+  // button.addEventListener('click', function() {
+  //   teamState();
+  // });
 
   // Each hover needs an event listener.
   hovers.forEach(function(hover) {
@@ -1436,10 +1406,10 @@
   //__________
   // Execution
 
-  introState(0);
-  window.setTimeout(function() {
-    introState(1);
-  }, seconds*1000);
+  // introState(0);
+  // window.setTimeout(function() {
+  //   introState(1);
+  // }, seconds*1000);
   // teamState();
 </script>
 </body>
