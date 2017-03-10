@@ -9,19 +9,23 @@
 	<!-- define the scene - enable artoolkit webcam -->
 	<a-scene embedded artoolkit='sourceType: webcam; cameraParametersUrl: https://rawgit.com/jeromeetienne/ar.js/master/data/data/camera_para.dat'>
 
+		<a-assets>
+			<a-asset-item id="lullabot" src="http://vr.lullabot.com/model/lullabot-full.dae"></a-asset-item>
+		</a-assets>
+
 		<!-- define a marker with a hiro -->
 		<a-marker type='pattern' url='https://rawgit.com/jeromeetienne/ar.js/master/data/data/patt.hiro'>
 
 			<!-- define the object which appears on this marker  -->
 
-      <!-- <a-model src="/model/lullabot-full.dae" position="0 0 0.5" rotation="0 -20 0">
+      <a-entity collada-model="#lullabot" position="0 0 0" rotation="0 -20 0" scale="1 1 1">
         <a-animation attribute="rotation" from="0 -30 0" to="0 330 0" dur="15000" easing="linear" repeat="indefinite"></a-animation>
-      </a-model> -->
-      
-			<a-box depth="1" height="1" width="1" position='0 0 0.5' material='opacity: 0.5; side:double'></a-box>
+      </a-entity>
+
+			<!-- <a-box depth="1" height="1" width="1" position='0 0 0.5' material='opacity: 0.5; side:double'></a-box>
 			<a-entity geometry="primitive: torusKnot; radius: 0.3; radiusTubular: 0.05" position='0 0 0.5'>
 				<a-animation attribute="rotation" from="0 0 0" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-			</a-entity>
+			</a-entity> -->
 
 		</a-marker>
 
