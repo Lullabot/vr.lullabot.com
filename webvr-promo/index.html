@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lullabot's Playground for Web VR</title>
+    <script src="http://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+  </head>
+  <body style="font-family:Helvetica;">
+    <div id="vrview">
+      <div class="header-text" style="text-align:center;">
+        <h1 style="position:absolute; width:100%; color:#fff; font-size:4rem; margin-bottom:2rem; padding-top:16.25rem; text-shadow:1px 1px 2px #000;">Lullabot's Playground for Web VR</h2>
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+    window.addEventListener('load', onVrViewLoad)
+    function onVrViewLoad() {
+      var vrView = new VRView.Player('#vrview', {
+        image: 'https://cdn.rawgit.com/Lullabot/vr.lullabot.com/gh-pages/team-photo/assets/team.jpg',
+        is_stereo: false,
+        width: '100%',
+        height: '650px'
+      });
+    }
+  </script>
+</html>
