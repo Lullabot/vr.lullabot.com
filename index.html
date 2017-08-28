@@ -3,6 +3,7 @@
   <head>
     <title>Lullabot VR</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="js/vrview.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,5 +12,21 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
+
+    <div class="header-text" style="text-align:center;">
+      <h1 style="position:absolute; width:100%; color:#fff; font-size:4rem; margin-bottom:2rem; padding-top:16.25rem; text-shadow:1px 1px 2px #000;">Lullabot's Playground for Web VR</h2>
+    </div>
   </body>
+
+  <script>
+    window.addEventListener('load', onVrViewLoad)
+    function onVrViewLoad() {
+      var vrView = new VRView.Player('#vrview', {
+        image: 'https://cdn.rawgit.com/Lullabot/vr.lullabot.com/gh-pages/team-photo/assets/team.jpg',
+        is_stereo: false,
+        width: '100%',
+        height: '650px'
+      });
+    }
+  </script>
 </html>
