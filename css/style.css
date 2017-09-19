@@ -1,0 +1,68 @@
+.webvr {
+  height: 26px;
+  width: 68px;
+  color: #55636F;
+  font-family: "FreightSans Pro";
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 27px;
+  text-align: center;
+}
+.projects {
+	height: 25px;
+	width: 60px;
+	color: #55636F;
+	font-family: "FreightText Pro";
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 25px;
+	text-align: center;
+}
+
+.layout-webvr-home__header {
+  position: relative;
+  height: 6.25rem;
+  text-align: center;
+  margin-bottom: 2em;
+}
+.layout-webvr-home__title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.layout-webvr-home__title__dashed {
+    font-family: Georgia,serif;
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+}
+.layout-webvr-home__title__dashed:after {
+    display: block;
+    position: absolute;
+    bottom: .625rem;
+    z-index: 1;
+    background-color: #f7f7f7;
+    width: 100%;
+    height: .1875rem;
+    vertical-align: middle;
+    content: ' ';
+}
+.layout-webvr-home__title__dashed span {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    padding: 0 1rem;
+}
+
+.media-left img {
+  border-radius: 50%;
+  height: 61px;
+  width: 61px;
+}
+
+.meta-divider:after {
+  margin: 0.9375rem;
+  color: #cdebf9;
+  content: '//';
+}
