@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'FreightSansPro';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/FreightSansProBold.woff2') format('woff2'),
+  url('/fonts/FreightSansProBold.woff') format('woff'),
+  url('/fonts/FreightSansProBold.ttf') format('truetype');
+}
+h1.hero-text {
+  position:absolute; 
+  width:100%; 
+  color:#fff; 
+  font-family:'FreightSansPro',Helvetica,sans-serif; 
+  font-size:60px; 
+  margin-bottom:2rem; 
+  padding-top:24.25rem; 
+  text-shadow:0px 0px 20px rgba(0,0,0,.8); 
+  pointer-events: none;
+}
 .webvr {
   height: 26px;
   width: 68px;
