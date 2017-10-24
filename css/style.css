@@ -21,11 +21,17 @@
 }
 @font-face {
   font-family: 'FreightSansPro';
-  font-weight: 400;
   font-style: normal;
   src: url('/fonts/FreightSansProBook.woff2') format('woff2'),
   url('/fonts/FreightSansProBook.woff') format('woff'),
   url('/fonts/FreightSansProBook.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FreightTextProItalic';
+  font-style: italic;
+  src: url('/fonts/FreightTextProBookItalic.woff2') format('woff2'),
+  url('/fonts/FreightTextProBookItalic.woff') format('woff'),
+  url('/fonts/FreightTextProBookItalic.ttf') format('truetype');
 }
 h1.hero-text {
   position:absolute; 
@@ -124,4 +130,19 @@ h1.hero-text {
   margin: 0.9375rem;
   color: #cdebf9;
   content: '//';
+}
+
+.font-italic {
+  font-family: 'FreightTextProItalic';
+  font-weight: 400;
+}
+
+.media-heading {
+  font-family: 'FreightSansPro';
+  font-weight: 700;
+}
+
+.media-body p {
+  font-family: 'FreightTextPro';
+  font-weight: 400;
 }
