@@ -1,16 +1,37 @@
 @font-face {
-  font-family: 'FreightSansPro';
-  font-weight: 700;
+  font-family: 'FreightSansProBold';
   font-style: normal;
   src: url('/fonts/FreightSansProBold.woff2') format('woff2'),
   url('/fonts/FreightSansProBold.woff') format('woff'),
   url('/fonts/FreightSansProBold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'FreightTextProBold';
+  font-style: normal;
+  src: url('/fonts/FreightTextProBold.woff2') format('woff2'),
+  url('/fonts/FreightTextProBold.woff') format('woff'),
+  url('/fonts/FreightTextProBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FreightTextPro';
+  font-style: normal;
+  src: url('/fonts/FreightTextProBook.woff2') format('woff2'),
+  url('/fonts/FreightTextProBook.woff') format('woff'),
+  url('/fonts/FreightTextProBook.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FreightSansPro';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/FreightSansProBook.woff2') format('woff2'),
+  url('/fonts/FreightSansProBook.woff') format('woff'),
+  url('/fonts/FreightSansProBook.ttf') format('truetype');
+}
 h1.hero-text {
   position:absolute; 
   width:100%; 
   color:#fff; 
-  font-family:'FreightSansPro',Helvetica,sans-serif; 
+  font-family:'FreightSansProBold',Helvetica,sans-serif; 
   font-size:60px; 
   margin-bottom:2rem; 
   padding-top:24.25rem; 
@@ -21,7 +42,7 @@ h1.hero-text {
   height: 26px;
   width: 68px;
   color: #55636F;
-  font-family: "FreightSans Pro";
+  font-family: 'FreightSansPro';
   font-size: 20px;
   font-weight: bold;
   line-height: 27px;
@@ -31,7 +52,7 @@ h1.hero-text {
 	height: 25px;
 	width: 60px;
 	color: #55636F;
-	font-family: "FreightText Pro";
+	font-family: 'FreightTextPro';
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 300;
@@ -74,6 +95,25 @@ h1.hero-text {
     padding: 0 1rem;
 }
 
+/*cards*/
+.card {
+  margin-bottom: 30px;
+}
+.card .card-title {
+  font-family: 'FreightSansPro';
+  font-weight: 700;
+}
+.card .card-text {
+  font-family: 'FreightTextPro';
+  font-weight: 400;
+}
+.card .btn {
+  border-radius: 0;
+  font-family: 'FreightSansPro';
+  font-weight: 700;
+}
+
+/*media*/
 .media-left img {
   border-radius: 50%;
   height: 61px;
