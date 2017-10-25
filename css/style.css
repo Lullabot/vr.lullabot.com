@@ -106,12 +106,13 @@ h1.hero-text {
   margin-bottom: 30px;
 }
 .card .card-title {
-  font-family: 'FreightSansPro';
+  font-family: 'FreightSansProBold';
   font-weight: 700;
 }
 .card .card-text {
   font-family: 'FreightTextPro';
   font-weight: 400;
+  font-size: 1.1rem;
 }
 .card .btn {
   border-radius: 0;
